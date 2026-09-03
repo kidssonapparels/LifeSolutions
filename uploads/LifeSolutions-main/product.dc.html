@@ -3,6 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Shop premium ladies beauty and mehendi products with WhatsApp ordering.">
+<title>Life Solution | Product Details</title>
 <script src="./support.js"></script>
 </head>
 <body>
@@ -38,8 +40,6 @@
     .cqb:hover{background:#d4527a;color:#fff}
     .rem-btn{background:transparent;border:none;cursor:pointer;color:rgba(45,27,38,.3);font-size:16px;line-height:1;padding:0 2px;transition:color .2s}
     .rem-btn:hover{color:#d4527a}
-    .confirm-btn{flex:2;background:linear-gradient(135deg,#d4527a,#a83560);color:#fff;font-size:13px;font-weight:600;padding:13px 18px;border:none;cursor:pointer;border-radius:32px;font-family:'DM Sans',sans-serif;transition:opacity .2s}
-    .confirm-btn:disabled{opacity:.4;cursor:not-allowed}
     @media(max-width:900px){.prod-grid{grid-template-columns:1fr;gap:32px;padding:32px 0}.container{padding:0 24px}.thumb-row{grid-template-columns:repeat(3,1fr)}}
     @media(max-width:480px){.container{padding:0 14px}.prod-grid{padding:20px 0}}
   </style>
@@ -85,15 +85,15 @@
     <!-- Images -->
     <div class="afu">
       <div style="border-radius:16px;overflow:hidden;background:linear-gradient(135deg,#fce8f0,#f5dce9);aspect-ratio:1/1;position:relative;">
-        <image-slot id="{{ prod.id }}" shape="rect" style="width:100%;height:100%;" placeholder="{{ prod.name }} — main photo"></image-slot>
+        <img src="{{ prod.image1 }}" alt="{{ prod.name }}" style="width:100%;height:100%;object-fit:cover;" loading="eager">
         <sc-if value="{{ prod.tag }}" hint-placeholder-val="{{ true }}">
           <span class="tag-pill" style="position:absolute;top:14px;left:14px;box-shadow:0 2px 8px rgba(212,82,122,.2);">{{ prod.tag }}</span>
         </sc-if>
       </div>
       <div class="thumb-row">
-        <div style="border-radius:10px;overflow:hidden;background:#fce8f0;aspect-ratio:1/1;"><image-slot id="{{ prod.id }}-2" shape="rect" style="width:100%;height:100%;" placeholder="Photo 2"></image-slot></div>
-        <div style="border-radius:10px;overflow:hidden;background:#fce8f0;aspect-ratio:1/1;"><image-slot id="{{ prod.id }}-3" shape="rect" style="width:100%;height:100%;" placeholder="Photo 3"></image-slot></div>
-        <div style="border-radius:10px;overflow:hidden;background:#fce8f0;aspect-ratio:1/1;"><image-slot id="{{ prod.id }}-4" shape="rect" style="width:100%;height:100%;" placeholder="Photo 4"></image-slot></div>
+        <div style="border-radius:10px;overflow:hidden;background:#fce8f0;aspect-ratio:1/1;"><img src="{{ prod.image2 }}" alt="{{ prod.name }} detail 2" style="width:100%;height:100%;object-fit:cover;" loading="lazy"></div>
+        <div style="border-radius:10px;overflow:hidden;background:#fce8f0;aspect-ratio:1/1;"><img src="{{ prod.image3 }}" alt="{{ prod.name }} detail 3" style="width:100%;height:100%;object-fit:cover;" loading="lazy"></div>
+        <div style="border-radius:10px;overflow:hidden;background:#fce8f0;aspect-ratio:1/1;"><img src="{{ prod.image4 }}" alt="{{ prod.name }} detail 4" style="width:100%;height:100%;object-fit:cover;" loading="lazy"></div>
       </div>
     </div>
 
@@ -207,43 +207,12 @@
 </section>
 
 <!-- FOOTER -->
-<sc-if value="{{ checkoutModal }}" hint-placeholder-val="{{ false }}">
-  <div style="position:fixed;inset:0;z-index:500;background:rgba(45,27,38,.7);display:flex;align-items:center;justify-content:center;padding:16px;" onClick="{{ closeModal }}">
-    <div style="background:#fff;border-radius:20px;padding:32px;max-width:440px;width:100%;box-shadow:0 24px 64px rgba(45,27,38,.3);" onClick="{{ stopProp }}">
-      <div style="text-align:center;margin-bottom:22px;">
-        <div style="font-size:36px;margin-bottom:8px;">📦</div>
-        <h3 style="font-family:'Playfair Display',serif;font-size:20px;font-weight:700;color:#2d1b26;margin-bottom:6px;">Complete Your Order</h3>
-        <p style="font-size:13px;color:rgba(45,27,38,.52);">Fill in your delivery details to continue</p>
-      </div>
-      <div style="display:flex;flex-direction:column;gap:14px;margin-bottom:20px;">
-        <div>
-          <label style="display:block;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;margin-bottom:6px;color:rgba(45,27,38,.5);">Full Name <span style="color:#d4527a;">*</span></label>
-          <input type="text" value="{{ custName }}" onChange="{{ onNameChange }}" placeholder="Apna naam likhein..." style="width:100%;padding:12px 14px;border:1.5px solid #f5dce9;border-radius:8px;background:#fef6f9;font-size:14px;font-family:'DM Sans',sans-serif;">
-        </div>
-        <div>
-          <label style="display:block;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;margin-bottom:6px;color:rgba(45,27,38,.5);">Phone Number <span style="color:#d4527a;">*</span></label>
-          <input type="tel" value="{{ custPhone }}" onChange="{{ onPhoneChange }}" placeholder="03xxxxxxxxx" style="width:100%;padding:12px 14px;border:1.5px solid #f5dce9;border-radius:8px;background:#fef6f9;font-size:14px;font-family:'DM Sans',sans-serif;">
-        </div>
-        <div>
-          <label style="display:block;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;margin-bottom:6px;color:rgba(45,27,38,.5);">Delivery Address <span style="color:#d4527a;">*</span></label>
-          <textarea value="{{ custAddr }}" onChange="{{ onAddrChange }}" placeholder="Ghar no., gali, sheher..." rows="3" style="width:100%;padding:12px 14px;border:1.5px solid #f5dce9;border-radius:8px;background:#fef6f9;font-size:14px;font-family:'DM Sans',sans-serif;resize:vertical;"></textarea>
-        </div>
-      </div>
-      <div style="display:flex;gap:10px;">
-        <button onClick="{{ closeModal }}" style="flex:1;background:#f5dce9;color:#d4527a;font-size:13px;font-weight:600;padding:13px 16px;border:none;cursor:pointer;border-radius:32px;font-family:'DM Sans',sans-serif;">Cancel</button>
-        <button onClick="{{ confirmOrder }}" disabled="{{ cannotConfirm }}" class="confirm-btn">Confirm Order 💬</button>
-      </div>
-      <p style="font-size:11px;color:rgba(45,27,38,.32);text-align:center;margin-top:10px;">Name, phone &amp; address sent with your order</p>
-    </div>
-  </div>
-</sc-if>
-
 <footer style="background:#2d1b26;padding:18px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;">
   <a href="Life Solution.dc.html" style="color:rgba(255,255,255,.45);font-size:12px;display:flex;align-items:center;gap:6px;transition:color .2s;" style-hover="color:#d4527a">
     <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5"/><path d="M12 19l-7-7 7-7"/></svg>
     Back to Life Solution
   </a>
-  <span style="color:rgba(255,255,255,.22);font-size:11px;">© 2024 Life Solution 💕</span>
+  <span style="color:rgba(255,255,255,.22);font-size:11px;">© 2026 Life Solution 💕</span>
   <a href="https://wa.me/923224707988" target="_blank" style="color:#25d366;font-size:12px;font-weight:600;">💬 WhatsApp</a>
 </footer>
 
@@ -255,9 +224,7 @@ class Component extends DCLogic {
     pid: (() => { try { return new URLSearchParams(window.location.search).get('id') || 'stencils' } catch(e) { return 'stencils' } })(),
     cart: (() => { try { return JSON.parse(localStorage.getItem('ls_cart') || '[]') } catch(e) { return [] } })(),
     qty: 1,
-    flash: false,
-    checkoutModal: false,
-    custName: '', custPhone: '', custAddr: ''
+    flash: false
   };
 
   _wa() { return 'https://wa.me/923224707988' }
@@ -265,29 +232,29 @@ class Component extends DCLogic {
 
   _prods() {
     return {
-      stencils: { id:'stencils', name:'Stencils', cat:'Mehendi', tag:'Best Seller', price:120, unit:'per pack',
+      stencils: { id:'stencils', image1:'assets/stencils.webp', image2:'assets/cone-application.webp', image3:'assets/cone-roses.webp', image4:'assets/giftbox.webp', name:'Stencils', cat:'Mehendi', tag:'Best Seller', price:120, unit:'per pack',
         desc:'Premium mehendi stencils with 50+ beautiful floral, geometric, and traditional patterns. Perfect for beginners and professionals — press, apply cone, peel off for a flawless design every time.',
         features:['50+ unique designs per pack','Easy peel & apply on any skin','Works on hands, feet & arms','Reusable up to 3 times','Premium flexible material'],
         usage:'Clean and dry skin. Press stencil firmly. Apply mehendi cone through holes. Wait 10 minutes. Carefully peel off to reveal a perfect design.' },
-      cone: { id:'cone', name:'Mehendi Cone', cat:'Mehendi', tag:'Popular', price:180, unit:'per cone',
-        desc:'Ready-to-use premium henna cone with natural ingredients for a rich, deep color. No mixing needed — squeeze and create. Smooth-flow tip for fine or bold designs. Safe for all skin types.',
-        features:['Natural henna blend formula','Rich dark brown-black color','Smooth clog-free precision tip','Lasts up to 2 weeks','Safe for all skin types'],
+      cone: { id:'cone', image1:'assets/cone-studio.webp', image2:'assets/cone-application.webp', image3:'assets/cone-roses.webp', image4:'assets/cone-transparent.webp', name:'Mehendi Cone', cat:'Mehendi', tag:'Popular', price:180, unit:'per cone',
+        desc:'Ready-to-use premium henna cone with natural ingredients for a rich, deep color. No mixing needed — squeeze and create. Smooth-flow tip for fine or bold designs. Designed for gentle use.',
+        features:['Natural henna blend formula','Rich dark brown-black color','Smooth clog-free precision tip','Lasts up to 2 weeks','Designed for gentle use'],
         usage:'Cut tip to desired size. Warm gently in hands. Apply design. Leave for 4-6 hours for best color. Scrape off dried paste (do not wash) for darkest results.' },
-      arch: { id:'arch', name:'Eyebrow Arch', cat:'Makeup', tag:'New', price:99, unit:'per set',
+      arch: { id:'arch', image1:'assets/eyebrow.webp', image2:'assets/giftbox.webp', image3:'assets/hero-hand.webp', image4:'assets/stencils.webp', name:'Eyebrow Arch', cat:'Makeup', tag:'New', price:99, unit:'per set',
         desc:'Professional eyebrow shaping stencil kit with 8 different arch styles. Perfectly groomed, symmetrical brows every time — no salon needed. Suits all face shapes.',
         features:['8 different arch styles included','Suits all face shapes','Reusable & washable stencils','Works with pencil or powder','Step-by-step guide included'],
         usage:'Choose your arch style. Align carefully above brow bone. Fill in with eyebrow pencil or powder. Blend edges lightly for a natural finish.' },
-      gajras: { id:'gajras', name:'Gajras', cat:'Hair', tag:'Festival Pick', price:220, unit:'per piece',
+      gajras: { id:'gajras', image1:'assets/gajras.webp', image2:'assets/giftbox.webp', image3:'assets/cone-box.webp', image4:'assets/hero-hand.webp', name:'Gajras', cat:'Hair', tag:'Festival Pick', price:220, unit:'per piece',
         desc:'Elegant traditional flower hair garlands inspired by Pakistani bridal style. Lightweight, comfortable, and beautiful — perfect for weddings, Eid, mehndi ceremonies, and festive occasions.',
         features:['Premium quality artificial flowers','Ultra-lightweight & comfortable all day','Easy clip-on attachment','Stays looking fresh all day','Perfect for buns, braids & updos'],
         usage:'Secure to hair bun or braid using the built-in clip. Layer multiple gajras for a fuller bridal look. Combine with pins for extra hold.' },
-      nails: { id:'nails', name:'Artificial Nails', cat:'Nails', tag:'Trending', price:280, unit:'per set',
+      nails: { id:'nails', image1:'assets/nails.webp', image2:'assets/giftbox.webp', image3:'assets/cone-box.webp', image4:'assets/hero-hand.webp', name:'Artificial Nails', cat:'Nails', tag:'Trending', price:280, unit:'per set',
         desc:'Press-on artificial nails for a gorgeous salon-style look at home in minutes. Elegant designs — perfect for weddings, Eid, and special occasions. No UV lamp required.',
         features:['24 nails per set — all sizes included','Nail glue included in pack','Lasts 7-14 days with care','Zero damage to natural nails','Salon-quality finish at home'],
         usage:'Clean and dry natural nails. Select right size per finger. Apply glue, press firmly 30 seconds. To remove: soak in warm water 10 minutes.' },
-      glitter: { id:'glitter', name:'Mehendi Glitter', cat:'Mehendi', tag:'', price:150, unit:'per pack',
-        desc:'Premium shimmer powder to add a festive glow to mehendi designs and skin. Skin-safe certified formula with 5 vibrant shimmery colors. Perfect for bridal mehendi, Eid, and every festive occasion.',
-        features:['Skin-safe certified formula','5 shimmery colors per pack','Long-lasting sparkle effect','Easy application with included brush','Removes easily with soap & water'],
+      glitter: { id:'glitter', image1:'assets/glitter.webp', image2:'assets/giftbox.webp', image3:'assets/cone-roses.webp', image4:'assets/stencils.webp', name:'Mehendi Glitter', cat:'Mehendi', tag:'', price:150, unit:'per pack',
+        desc:'Premium shimmer powder to add a festive glow to mehendi designs and skin. Cosmetic-use glitter formula with 5 vibrant shimmery colors. Perfect for bridal mehendi, Eid, and every festive occasion.',
+        features:['Cosmetic-use glitter formula','5 shimmery colors per pack','Long-lasting sparkle effect','Easy application with included brush','Removes easily with soap & water'],
         usage:'Apply over completely dried mehendi. Use included brush for precise application. Can also apply directly on skin. Set with hairspray for longer wear.' }
     };
   }
@@ -321,17 +288,13 @@ class Component extends DCLogic {
     this.setState({ qty: Math.max(1, Math.min(10, this.state.qty + d)) });
   }
 
-  openCheckoutModal() { if (!this.state.cart.length) return; this.setState({ checkoutModal: true }); }
-  closeModal() { this.setState({ checkoutModal: false }); }
-  confirmOrder() {
-    const { cart, custName, custPhone, custAddr } = this.state;
-    if (!custName.trim() || !custPhone.trim() || !custAddr.trim()) return;
+  checkout() {
+    const { cart } = this.state;
+    if (!cart.length) return;
     const sub = cart.reduce((s, i) => s + i.price * i.qty, 0);
     const total = sub + 200;
     const lines = cart.map(i => `${i.qty}x ${i.name} - Rs.${i.price * i.qty}`).join('%0A');
-    const details = `%0A%0A%F0%9F%93%A6%20Delivery%20Details%3A%0AName%3A%20${encodeURIComponent(custName)}%0APhone%3A%20${encodeURIComponent(custPhone)}%0AAddress%3A%20${encodeURIComponent(custAddr)}`;
-    window.open(this._wa() + `?text=%F0%9F%9B%8D%EF%B8%8F%20Life%20Solution%20Order%3A%0A%0A${lines}%0A%0AShipping%3A%20Rs.200%0A%E2%80%95%E2%80%95%E2%80%95%0ATotal%3A%20Rs.${total}${details}%0A%0APlease%20confirm!`, '_blank');
-    this.setState({ checkoutModal: false, custName: '', custPhone: '', custAddr: '' });
+    window.open(this._wa() + `?text=%F0%9F%9B%8D%EF%B8%8F%20Life%20Solution%20Order%3A%0A%0A${lines}%0A%0AShipping%3A%20Rs.200%0A%E2%80%95%E2%80%95%E2%80%95%E2%80%95%0ATotal%3A%20Rs.${total}%0A%0APlease%20confirm%20%26%20share%20delivery%20address!`, '_blank');
   }
 
   renderVals() {
@@ -366,16 +329,7 @@ class Component extends DCLogic {
       subtotalLabel: 'Rs. ' + sub,
       shippingLabel: 'Rs. 200',
       totalLabel: 'Rs. ' + (sub + 200),
-      onCheckout: () => this.openCheckoutModal(),
-      checkoutModal: this.state.checkoutModal,
-      custName: this.state.custName, custPhone: this.state.custPhone, custAddr: this.state.custAddr,
-      cannotConfirm: !(this.state.custName.trim() && this.state.custPhone.trim() && this.state.custAddr.trim()),
-      onNameChange: (e) => this.setState({ custName: e.target.value }),
-      onPhoneChange: (e) => this.setState({ custPhone: e.target.value }),
-      onAddrChange: (e) => this.setState({ custAddr: e.target.value }),
-      closeModal: () => this.closeModal(),
-      confirmOrder: () => this.confirmOrder(),
-      stopProp: (e) => e.stopPropagation(),
+      onCheckout: () => this.checkout(),
       scrollToCheckout: () => { const el = document.getElementById('checkout'); if(el) el.scrollIntoView({behavior:'smooth'}) }
     };
   }

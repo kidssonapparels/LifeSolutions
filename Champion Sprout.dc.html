@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="_ds/modernist-f435775c-c7ec-4f77-b5ad-2555162acf38/styles.css">
+  <script src="_ds/modernist-f435775c-c7ec-4f77-b5ad-2555162acf38/_ds_bundle.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <script src="./image-slot.js"></script>
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:'Archivo',sans-serif;background:var(--color-bg,#f3f2f2);color:#201e1d}
+    a{color:inherit;text-decoration:none}
+    a:hover{color:#ec3013}
+    img{display:block;max-width:100%}
+    input,textarea{font-family:'Archivo',sans-serif}
+    input:focus,textarea:focus{outline:2px solid #ec3013;outline-offset:2px}
+    @keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+    @keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
+    .afu{animation:fadeUp .7s ease both}
+    .afu2{animation:fadeUp .7s .15s ease both}
+    .afu3{animation:fadeUp .7s .3s ease both}
+    .mtrack{display:flex;animation:marquee 28s linear infinite}
+    .nav-a{color:#f3f2f2;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;transition:color .2s}
+    .nav-a:hover{color:#ec3013}
+    .div-card{background:#f3f2f2;padding:36px 28px;transition:background .2s}
+    .div-card:hover{background:#fff}
+    .team-card{background:#f3f2f2;padding:28px 24px;border-bottom:3px solid transparent;transition:border-color .2s}
+    .team-card:hover{border-color:#ec3013}
+    .step-item{flex:1;padding:28px 24px;border-left:2px solid rgba(255,255,255,.1);position:relative}
+    .step-item:first-child{border-left:none}
+    .float-btns{position:fixed;bottom:32px;right:32px;z-index:999;display:flex;flex-direction:column;gap:12px}
+    .fab{width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 16px rgba(0,0,0,.2);transition:transform .2s,filter .2s}
+    .fab:hover{transform:scale(1.08);filter:brightness(1.1)}
+    .social-icon{width:36px;height:36px;background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;color:rgba(243,242,242,.6);transition:background .2s,color .2s}
+    .social-icon:hover{color:#fff}
+  </style>
+</helmet>
+
+<!-- NAV -->
+<nav style="position:sticky;top:0;z-index:100;background:#201e1d;border-bottom:2px solid #ec3013;display:flex;align-items:center;justify-content:space-between;padding:0 48px;height:64px;">
+  <a href="Champion Sprout.dc.html" style="display:flex;align-items:center;gap:10px;">
+    <div style="width:36px;height:36px;background:#fff;display:flex;align-items:center;justify-content:center;border:2px solid #201e1d;">
+      <span style="color:#201e1d;font-weight:900;font-size:15px;letter-spacing:-1px;">CS</span>
+    </div>
+    <span style="color:#f3f2f2;font-weight:800;font-size:17px;letter-spacing:.04em;text-transform:uppercase;">Champion Sprout</span>
+  </a>
+  <div style="display:flex;gap:28px;align-items:center;">
+    <a href="#about" class="nav-a">About</a>
+    <a href="#divisions" class="nav-a">Divisions</a>
+    <a href="#team" class="nav-a">Team</a>
+    <a href="#contact" class="nav-a">Contact</a>
+    <a href="https://wa.me/923244129441" target="_blank" style="background:#ec3013;color:#fff;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:8px 18px;">WhatsApp Us</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section style="position:relative;min-height:92vh;background:#201e1d;display:flex;flex-direction:column;justify-content:flex-end;padding:0 48px 80px;overflow:hidden;">
+  <div style="position:absolute;inset:0;background-image:repeating-linear-gradient(90deg,rgba(236,48,19,.04) 0,rgba(236,48,19,.04) 1px,transparent 1px,transparent 12.5%);pointer-events:none;"></div>
+  <div style="position:absolute;inset:0;background-image:repeating-linear-gradient(0deg,rgba(236,48,19,.04) 0,rgba(236,48,19,.04) 1px,transparent 1px,transparent 10%);pointer-events:none;"></div>
+  <div style="position:absolute;top:0;right:0;width:4px;height:100%;background:#ec3013;"></div>
+  <div style="position:absolute;top:50%;left:48px;transform:translateY(-60%);font-size:clamp(80px,12vw,180px);font-weight:900;color:rgba(255,255,255,.03);line-height:1;pointer-events:none;letter-spacing:-.04em;white-space:nowrap;">CHAMPION<br>SPROUT</div>
+  <div class="afu" style="margin-bottom:16px;">
+    <span style="display:inline-block;background:#ec3013;color:#fff;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:4px 12px;">Est. 2024 — Lahore, Pakistan</span>
+  </div>
+  <h1 class="afu2" style="color:#f3f2f2;font-size:clamp(40px,6vw,88px);font-weight:900;line-height:1;letter-spacing:-.03em;max-width:800px;text-wrap:pretty;">Where Quality<br><span style="color:#ec3013;">Meets</span> Dedication.</h1>
+  <p class="afu3" style="color:rgba(243,242,242,.6);font-size:18px;max-width:520px;line-height:1.6;margin-top:24px;">Champion Sprout delivers world-class knitted garments and textile solutions — advanced technology, finest craftsmanship.</p>
+  <div class="afu3" style="display:flex;gap:16px;margin-top:40px;">
+    <a href="#about" style="background:#ec3013;color:#fff;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:14px 32px;">Explore More</a>
+    <a href="#contact" style="border:2px solid rgba(243,242,242,.3);color:#f3f2f2;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:14px 32px;">Get In Touch</a>
+  </div>
+  <div style="position:absolute;bottom:32px;right:56px;display:flex;flex-direction:column;align-items:center;gap:8px;opacity:.4;">
+    <span style="color:#f3f2f2;font-size:10px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;writing-mode:vertical-rl;">Scroll Down</span>
+    <div style="width:1px;height:48px;background:#f3f2f2;"></div>
+  </div>
+</section>
+
+<!-- TICKER -->
+<div style="background:#ec3013;padding:12px 0;overflow:hidden;border-top:2px solid #201e1d;border-bottom:2px solid #201e1d;">
+  <div class="mtrack" style="white-space:nowrap;">
+    <span style="color:#fff;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:0 40px;">Premium Knitted Garments</span>
+    <span style="color:rgba(255,255,255,.5);padding:0 8px;">—</span>
+    <span style="color:#fff;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:0 40px;">Advanced Textile Manufacturing</span>
+    <span style="color:rgba(255,255,255,.5);padding:0 8px;">—</span>
+    <span style="color:#fff;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:0 40px;">Sustainable Production</span>
+    <span style="color:rgba(255,255,255,.5);padding:0 8px;">—</span>
+    <span style="color:#fff;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:0 40px;">Lahore, Pakistan</span>
+    <span style="color:rgba(255,255,255,.5);padding:0 8px;">—</span>
+    <span style="color:#fff;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:0 40px;">Premium Knitted Garments</span>
+    <span style="color:rgba(255,255,255,.5);padding:0 8px;">—</span>
+    <span style="color:#fff;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:0 40px;">Advanced Textile Manufacturing</span>
+    <span style="color:rgba(255,255,255,.5);padding:0 8px;">—</span>
+    <span style="color:#fff;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:0 40px;">Sustainable Production</span>
+    <span style="color:rgba(255,255,255,.5);padding:0 8px;">—</span>
+    <span style="color:#fff;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:0 40px;">Lahore, Pakistan</span>
+    <span style="color:rgba(255,255,255,.5);padding:0 8px;">—</span>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about" style="padding:96px 48px;background:#f3f2f2;">
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:80px;max-width:1200px;margin:0 auto;align-items:start;">
+    <div>
+      <span style="display:block;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#ec3013;margin-bottom:16px;">Welcome to Champion Sprout</span>
+      <h2 style="font-size:clamp(32px,4vw,52px);font-weight:900;line-height:1.05;letter-spacing:-.02em;margin-bottom:24px;text-wrap:pretty;">A New Standard<br>in Textile Excellence</h2>
+      <div style="width:48px;height:2px;background:#ec3013;margin-bottom:24px;"></div>
+      <p style="font-size:16px;line-height:1.75;color:rgba(32,30,29,.75);margin-bottom:16px;">Champion Sprout is a fully integrated textile and garment manufacturing facility based in Lahore, Pakistan. Founded with a vision to deliver unmatched quality and innovation, we serve global clients across spinning, knitting, dyeing, printing, and stitching.</p>
+      <p style="font-size:16px;line-height:1.75;color:rgba(32,30,29,.75);margin-bottom:32px;">Our mission is to deliver innovative, sustainable solutions that redefine the textile industry — thread by thread, garment by garment.</p>
+      <a href="#contact" style="display:inline-block;background:#201e1d;color:#f3f2f2;font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:13px 28px;">Learn More →</a>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:2px;background:#201e1d;">
+      <div style="background:#f3f2f2;padding:36px 28px;border-left:4px solid #ec3013;">
+        <div style="font-size:42px;font-weight:900;letter-spacing:-.03em;color:#ec3013;line-height:1;">1.2M</div>
+        <div style="font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-top:8px;color:rgba(32,30,29,.6);">Production / Month</div>
+      </div>
+      <div style="background:#f3f2f2;padding:36px 28px;border-left:4px solid #ec3013;">
+        <div style="font-size:42px;font-weight:900;letter-spacing:-.03em;color:#ec3013;line-height:1;">$12M</div>
+        <div style="font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-top:8px;color:rgba(32,30,29,.6);">Annual Turnover</div>
+      </div>
+      <div style="background:#f3f2f2;padding:36px 28px;border-left:4px solid #ec3013;">
+        <div style="font-size:42px;font-weight:900;letter-spacing:-.03em;color:#ec3013;line-height:1;">850+</div>
+        <div style="font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-top:8px;color:rgba(32,30,29,.6);">Workers &amp; Staff</div>
+      </div>
+      <div style="background:#f3f2f2;padding:36px 28px;border-left:4px solid #ec3013;">
+        <div style="font-size:42px;font-weight:900;letter-spacing:-.03em;color:#ec3013;line-height:1;">180K</div>
+        <div style="font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-top:8px;color:rgba(32,30,29,.6);">Total Space (SqFt)</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div style="height:2px;background:#201e1d;"></div>
+
+<!-- DIVISIONS -->
+<section id="divisions" style="padding:96px 48px;background:#f3f2f2;">
+  <div style="max-width:1200px;margin:0 auto;">
+    <div style="display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:48px;">
+      <div>
+        <span style="display:block;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#ec3013;margin-bottom:12px;">Our Capabilities</span>
+        <h2 style="font-size:clamp(28px,4vw,48px);font-weight:900;letter-spacing:-.02em;line-height:1.05;">Fully Integrated<br>Production Divisions</h2>
+      </div>
+      <p style="max-width:300px;font-size:14px;line-height:1.7;color:rgba(32,30,29,.65);text-align:right;">Click any division to explore detailed capabilities, machinery, and processes.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:#201e1d;">
+      <a href="Spinning.dc.html" class="div-card" style="display:block;">
+        <div style="width:48px;height:48px;background:#ec3013;display:flex;align-items:center;justify-content:center;margin-bottom:20px;">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
+        </div>
+        <h3 style="font-size:20px;font-weight:800;margin-bottom:10px;">Spinning</h3>
+        <p style="font-size:13px;line-height:1.7;color:rgba(32,30,29,.65);">High-quality yarn production with advanced ring spinning — Ne 20 to Ne 60.</p>
+        <div style="margin-top:16px;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#ec3013;">View Details →</div>
+      </a>
+      <a href="Knitting.dc.html" class="div-card" style="display:block;">
+        <div style="width:48px;height:48px;background:#201e1d;display:flex;align-items:center;justify-content:center;margin-bottom:20px;">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#f3f2f2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+        </div>
+        <h3 style="font-size:20px;font-weight:800;margin-bottom:10px;">Knitting</h3>
+        <p style="font-size:13px;line-height:1.7;color:rgba(32,30,29,.65);">Single jersey, double jersey, interlock, rib and fleece fabrics at scale.</p>
+        <div style="margin-top:16px;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#ec3013;">View Details →</div>
+      </a>
+      <a href="Dyeing.dc.html" class="div-card" style="display:block;">
+        <div style="width:48px;height:48px;background:#ec3013;display:flex;align-items:center;justify-content:center;margin-bottom:20px;">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg>
+        </div>
+        <h3 style="font-size:20px;font-weight:800;margin-bottom:10px;">Dyeing</h3>
+        <p style="font-size:13px;line-height:1.7;color:rgba(32,30,29,.65);">Precision dyeing with eco-friendly reactive and disperse dye processes.</p>
+        <div style="margin-top:16px;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#ec3013;">View Details →</div>
+      </a>
+      <a href="Cutting.dc.html" class="div-card" style="display:block;">
+        <div style="width:48px;height:48px;background:#201e1d;display:flex;align-items:center;justify-content:center;margin-bottom:20px;">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#f3f2f2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><line x1="20" y1="4" x2="8.12" y2="15.88"/><line x1="14.47" y1="14.48" x2="20" y2="20"/><line x1="8.12" y1="8.12" x2="12" y2="12"/></svg>
+        </div>
+        <h3 style="font-size:20px;font-weight:800;margin-bottom:10px;">Cutting</h3>
+        <p style="font-size:13px;line-height:1.7;color:rgba(32,30,29,.65);">CAD/CAM cutting systems for precision pattern work and minimal fabric waste.</p>
+        <div style="margin-top:16px;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#ec3013;">View Details →</div>
+      </a>
+      <a href="Printing.dc.html" class="div-card" style="display:block;">
+        <div style="width:48px;height:48px;background:#ec3013;display:flex;align-items:center;justify-content:center;margin-bottom:20px;">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+        </div>
+        <h3 style="font-size:20px;font-weight:800;margin-bottom:10px;">Printing</h3>
+        <p style="font-size:13px;line-height:1.7;color:rgba(32,30,29,.65);">Screen, digital and robotic printing — vivid, durable designs at any volume.</p>
+        <div style="margin-top:16px;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#ec3013;">View Details →</div>
+      </a>
+      <a href="Stitching.dc.html" class="div-card" style="display:block;">
+        <div style="width:48px;height:48px;background:#201e1d;display:flex;align-items:center;justify-content:center;margin-bottom:20px;">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#f3f2f2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="5 12 19 12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </div>
+        <h3 style="font-size:20px;font-weight:800;margin-bottom:10px;">Stitching</h3>
+        <p style="font-size:13px;line-height:1.7;color:rgba(32,30,29,.65);">Expert garment stitching with strict QC — meeting international standards.</p>
+        <div style="margin-top:16px;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#ec3013;">View Details →</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<div style="height:2px;background:#201e1d;"></div>
+
+<!-- PRODUCTION JOURNEY (replaces old sustainability) -->
+<section style="padding:96px 48px;background:#201e1d;">
+  <div style="max-width:1200px;margin:0 auto;">
+    <div style="margin-bottom:56px;">
+      <span style="display:block;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#ec3013;margin-bottom:12px;">From Fibre to Fashion</span>
+      <h2 style="font-size:clamp(28px,4vw,52px);font-weight:900;color:#f3f2f2;letter-spacing:-.02em;line-height:1.05;">Our Production Journey</h2>
+    </div>
+    <div style="display:flex;gap:0;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);">
+      <div class="step-item">
+        <div style="font-size:36px;font-weight:900;color:rgba(236,48,19,.3);line-height:1;margin-bottom:12px;">01</div>
+        <div style="width:32px;height:2px;background:#ec3013;margin-bottom:16px;"></div>
+        <h4 style="color:#f3f2f2;font-size:16px;font-weight:800;margin-bottom:8px;">Raw Materials</h4>
+        <p style="color:rgba(243,242,242,.5);font-size:13px;line-height:1.6;">Premium cotton &amp; polyester sourced from certified suppliers globally.</p>
+      </div>
+      <div class="step-item">
+        <div style="font-size:36px;font-weight:900;color:rgba(236,48,19,.3);line-height:1;margin-bottom:12px;">02</div>
+        <div style="width:32px;height:2px;background:#ec3013;margin-bottom:16px;"></div>
+        <h4 style="color:#f3f2f2;font-size:16px;font-weight:800;margin-bottom:8px;">Spinning</h4>
+        <p style="color:rgba(243,242,242,.5);font-size:13px;line-height:1.6;">Ring-spun yarn at precise counts, delivering consistent strength &amp; fineness.</p>
+      </div>
+      <div class="step-item">
+        <div style="font-size:36px;font-weight:900;color:rgba(236,48,19,.3);line-height:1;margin-bottom:12px;">03</div>
+        <div style="width:32px;height:2px;background:#ec3013;margin-bottom:16px;"></div>
+        <h4 style="color:#f3f2f2;font-size:16px;font-weight:800;margin-bottom:8px;">Knitting</h4>
+        <p style="color:rgba(243,242,242,.5);font-size:13px;line-height:1.6;">State-of-the-art circular knitting machines producing diverse fabric structures.</p>
+      </div>
+      <div class="step-item">
+        <div style="font-size:36px;font-weight:900;color:rgba(236,48,19,.3);line-height:1;margin-bottom:12px;">04</div>
+        <div style="width:32px;height:2px;background:#ec3013;margin-bottom:16px;"></div>
+        <h4 style="color:#f3f2f2;font-size:16px;font-weight:800;margin-bottom:8px;">Dyeing &amp; Print</h4>
+        <p style="color:rgba(243,242,242,.5);font-size:13px;line-height:1.6;">Vibrant, lasting color — reactive dyeing, screen &amp; digital print techniques.</p>
+      </div>
+      <div class="step-item">
+        <div style="font-size:36px;font-weight:900;color:rgba(236,48,19,.3);line-height:1;margin-bottom:12px;">05</div>
+        <div style="width:32px;height:2px;background:#ec3013;margin-bottom:16px;"></div>
+        <h4 style="color:#f3f2f2;font-size:16px;font-weight:800;margin-bottom:8px;">Cutting &amp; Stitch</h4>
+        <p style="color:rgba(243,242,242,.5);font-size:13px;line-height:1.6;">Precision CAD cutting &amp; expert stitching lines with zero-tolerance QC.</p>
+      </div>
+      <div class="step-item">
+        <div style="font-size:36px;font-weight:900;color:rgba(236,48,19,.3);line-height:1;margin-bottom:12px;">06</div>
+        <div style="width:32px;height:2px;background:#ec3013;margin-bottom:16px;"></div>
+        <h4 style="color:#f3f2f2;font-size:16px;font-weight:800;margin-bottom:8px;">Dispatch</h4>
+        <p style="color:rgba(243,242,242,.5);font-size:13px;line-height:1.6;">On-time global delivery — packed, tagged &amp; shipped to international standards.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div style="height:2px;background:#ec3013;"></div>
+
+<!-- GLOBAL REACH & INNOVATION -->
+<section style="padding:96px 48px;background:#f3f2f2;">
+  <div style="max-width:1200px;margin:0 auto;">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;margin-bottom:64px;">
+      <div>
+        <span style="display:block;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#ec3013;margin-bottom:12px;">Reach &amp; Innovation</span>
+        <h2 style="font-size:clamp(28px,4vw,48px);font-weight:900;letter-spacing:-.02em;line-height:1.05;margin-bottom:20px;">Built for the World.<br>Made in Lahore.</h2>
+        <div style="width:48px;height:2px;background:#201e1d;margin-bottom:20px;"></div>
+        <p style="font-size:15px;line-height:1.75;color:rgba(32,30,29,.7);">Champion Sprout exports to clients across Europe, North America, and the Middle East. Our investment in the latest machinery ensures we stay ahead of global trends and client expectations.</p>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:2px;background:#201e1d;">
+        <div style="background:#f3f2f2;padding:28px 24px;border-top:3px solid #ec3013;">
+          <div style="font-size:36px;font-weight:900;color:#201e1d;line-height:1;margin-bottom:6px;">20+</div>
+          <div style="font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:rgba(32,30,29,.5);">Export Markets</div>
+        </div>
+        <div style="background:#f3f2f2;padding:28px 24px;border-top:3px solid #ec3013;">
+          <div style="font-size:36px;font-weight:900;color:#201e1d;line-height:1;margin-bottom:6px;">50+</div>
+          <div style="font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:rgba(32,30,29,.5);">Global Clients</div>
+        </div>
+        <div style="background:#f3f2f2;padding:28px 24px;border-top:3px solid #ec3013;">
+          <div style="font-size:36px;font-weight:900;color:#201e1d;line-height:1;margin-bottom:6px;">48hr</div>
+          <div style="font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:rgba(32,30,29,.5);">Sample Turnaround</div>
+        </div>
+        <div style="background:#f3f2f2;padding:28px 24px;border-top:3px solid #ec3013;">
+          <div style="font-size:36px;font-weight:900;color:#201e1d;line-height:1;margin-bottom:6px;">99%</div>
+          <div style="font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:rgba(32,30,29,.5);">On-Time Delivery</div>
+        </div>
+      </div>
+    </div>
+    <!-- 3-col innovation highlights -->
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:#201e1d;">
+      <div style="background:#f3f2f2;padding:36px 28px;">
+        <div style="width:40px;height:40px;background:#ec3013;display:flex;align-items:center;justify-content:center;margin-bottom:16px;">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+        </div>
+        <h3 style="font-size:18px;font-weight:800;margin-bottom:10px;">Smart Machinery</h3>
+        <p style="font-size:13px;line-height:1.7;color:rgba(32,30,29,.65);">Fully automated knitting, printing and cutting lines with real-time monitoring and IoT integration for zero-defect production.</p>
+      </div>
+      <div style="background:#f3f2f2;padding:36px 28px;">
+        <div style="width:40px;height:40px;background:#201e1d;display:flex;align-items:center;justify-content:center;margin-bottom:16px;">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f3f2f2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <h3 style="font-size:18px;font-weight:800;margin-bottom:10px;">Quality Assurance</h3>
+        <p style="font-size:13px;line-height:1.7;color:rgba(32,30,29,.65);">AQL inspection at every production stage — inline QC, lab testing, and final audit before every shipment leaves our facility.</p>
+      </div>
+      <div style="background:#f3f2f2;padding:36px 28px;">
+        <div style="width:40px;height:40px;background:#ec3013;display:flex;align-items:center;justify-content:center;margin-bottom:16px;">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        </div>
+        <h3 style="font-size:18px;font-weight:800;margin-bottom:10px;">Eco-Responsible</h3>
+        <p style="font-size:13px;line-height:1.7;color:rgba(32,30,29,.65);">Water recycling, energy-efficient dyeing, and eco-certified materials reduce our footprint while keeping quality at its peak.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div style="height:2px;background:#201e1d;"></div>
+
+<!-- TEAM -->
+<section id="team" style="padding:96px 48px;background:#f3f2f2;">
+  <div style="max-width:1200px;margin:0 auto;">
+    <div style="margin-bottom:56px;">
+      <span style="display:block;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#ec3013;margin-bottom:12px;">The People Behind Champion Sprout</span>
+      <h2 style="font-size:clamp(28px,4vw,52px);font-weight:900;letter-spacing:-.02em;line-height:1.05;">Meet Our Team</h2>
+      <div style="width:48px;height:2px;background:#201e1d;margin-top:16px;"></div>
+    </div>
+    <!-- Featured leadership duo -->
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:2px;background:#201e1d;margin-bottom:2px;">
+      <!-- Muhammad Ilyas - Director -->
+      <div style="background:#201e1d;padding:44px 40px;display:flex;flex-direction:column;justify-content:space-between;">
+        <div>
+          <div style="width:80px;height:80px;background:#f3f2f2;display:flex;align-items:center;justify-content:center;margin-bottom:20px;">
+            <span style="color:#201e1d;font-size:28px;font-weight:900;">MI</span>
+          </div>
+          <h3 style="color:#f3f2f2;font-size:26px;font-weight:900;letter-spacing:-.02em;margin-bottom:6px;">Muhammad Ilyas</h3>
+          <div style="font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#ec3013;margin-bottom:16px;">Director</div>
+          <p style="font-size:14px;line-height:1.7;color:rgba(243,242,242,.65);">"At Champion Sprout, our direction is clear — build the most trusted textile brand in Pakistan. Every decision, every hire, every machine we install reflects that commitment."</p>
+        </div>
+      </div>
+      <!-- Maaz Ali - CEO (Owner) -->
+      <div style="background:#ec3013;padding:44px 40px;display:flex;flex-direction:column;justify-content:space-between;">
+        <div>
+          <div style="width:80px;height:80px;background:#fff;display:flex;align-items:center;justify-content:center;margin-bottom:20px;">
+            <span style="color:#ec3013;font-size:28px;font-weight:900;">MA</span>
+          </div>
+          <h3 style="color:#fff;font-size:26px;font-weight:900;letter-spacing:-.02em;margin-bottom:6px;">Maaz Ali</h3>
+          <div style="font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.7);margin-bottom:16px;">Founder &amp; Chief Executive Officer</div>
+          <p style="font-size:14px;line-height:1.7;color:rgba(255,255,255,.85);">"Champion Sprout was founded on a simple belief — quality is not a luxury, it is a standard. We push the boundaries of what textile manufacturing can achieve."</p>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:8px;margin-top:24px;">
+          <a href="tel:03244129441" style="display:flex;align-items:center;gap:8px;color:rgba(255,255,255,.85);font-size:13px;font-weight:600;">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13 19.79 19.79 0 0 1 1.61 4.36a2 2 0 0 1 1.995-2.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            03244129441
+          </a>
+          <a href="https://wa.me/923244129441" target="_blank" style="display:flex;align-items:center;gap:8px;color:#fff;font-size:13px;font-weight:700;">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+            WhatsApp
+          </a>
+        </div>
+      </div>
+    </div>
+    <!-- Grid: 7 team members (4+3) + 1 "join" = 8 = 4x2 -->
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:#201e1d;">
+      <div class="team-card">
+        <div style="width:52px;height:52px;background:#201e1d;display:flex;align-items:center;justify-content:center;margin-bottom:14px;"><span style="color:#f3f2f2;font-size:17px;font-weight:900;">SH</span></div>
+        <h4 style="font-size:16px;font-weight:800;margin-bottom:3px;">Shahid Hameed Ullah</h4>
+        <div style="font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#ec3013;margin-bottom:10px;">Finance Head</div>
+        <p style="font-size:12px;line-height:1.65;color:rgba(32,30,29,.65);">Ensuring financial integrity, strategic resource allocation, and transparent reporting across all operations.</p>
+      </div>
+      <div class="team-card">
+        <div style="width:52px;height:52px;background:#ec3013;display:flex;align-items:center;justify-content:center;margin-bottom:14px;"><span style="color:#fff;font-size:17px;font-weight:900;">AU</span></div>
+        <h4 style="font-size:16px;font-weight:800;margin-bottom:3px;">Atta Ur Rehman</h4>
+        <div style="font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#ec3013;margin-bottom:10px;">Merchandiser</div>
+        <p style="font-size:12px;line-height:1.65;color:rgba(32,30,29,.65);">Coordinating buyer requirements and production schedules to ensure every order is delivered to specification.</p>
+      </div>
+      <div class="team-card">
+        <div style="width:52px;height:52px;background:#201e1d;display:flex;align-items:center;justify-content:center;margin-bottom:14px;"><span style="color:#f3f2f2;font-size:17px;font-weight:900;">MR</span></div>
+        <h4 style="font-size:16px;font-weight:800;margin-bottom:3px;">Muhammad Ramzan</h4>
+        <div style="font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#ec3013;margin-bottom:10px;">Sr. Merchandiser</div>
+        <p style="font-size:12px;line-height:1.65;color:rgba(32,30,29,.65);">Managing key international accounts with precision — from tech pack to final shipment approval.</p>
+      </div>
+      <div class="team-card">
+        <div style="width:52px;height:52px;background:#ec3013;display:flex;align-items:center;justify-content:center;margin-bottom:14px;"><span style="color:#fff;font-size:17px;font-weight:900;">MU</span></div>
+        <h4 style="font-size:16px;font-weight:800;margin-bottom:3px;">Muhia Udin</h4>
+        <div style="font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#ec3013;margin-bottom:10px;">Knitting Supervisor</div>
+        <p style="font-size:12px;line-height:1.65;color:rgba(32,30,29,.65);">Overseeing all circular knitting machines, fabric quality, and production efficiency on the knitting floor.</p>
+      </div>
+      <div class="team-card">
+        <div style="width:52px;height:52px;background:#201e1d;display:flex;align-items:center;justify-content:center;margin-bottom:14px;"><span style="color:#f3f2f2;font-size:17px;font-weight:900;">MF</span></div>
+        <h4 style="font-size:16px;font-weight:800;margin-bottom:3px;">M. Fiaz</h4>
+        <div style="font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#ec3013;margin-bottom:10px;">Woven Dept. Supervisor</div>
+        <p style="font-size:12px;line-height:1.65;color:rgba(32,30,29,.65);">Supervising woven fabric production lines, maintaining loom efficiency and fabric quality standards.</p>
+      </div>
+      <div class="team-card">
+        <div style="width:52px;height:52px;background:#ec3013;display:flex;align-items:center;justify-content:center;margin-bottom:14px;"><span style="color:#fff;font-size:17px;font-weight:900;">BA</span></div>
+        <h4 style="font-size:16px;font-weight:800;margin-bottom:3px;">Bashir Ahmad</h4>
+        <div style="font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#ec3013;margin-bottom:10px;">Finishing Incharge</div>
+        <p style="font-size:12px;line-height:1.65;color:rgba(32,30,29,.65);">Leading the finishing department — ironing, folding, tagging, and packing to the highest export standards.</p>
+      </div>
+      <div class="team-card">
+        <div style="width:52px;height:52px;background:#201e1d;display:flex;align-items:center;justify-content:center;margin-bottom:14px;"><span style="color:#f3f2f2;font-size:17px;font-weight:900;">MH</span></div>
+        <h4 style="font-size:16px;font-weight:800;margin-bottom:3px;">M. Husnain</h4>
+        <div style="font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#ec3013;margin-bottom:10px;">Fabrications</div>
+        <p style="font-size:12px;line-height:1.65;color:rgba(32,30,29,.65);">Managing fabric development, sampling, and technical fabrication for new product ranges and client prototypes.</p>
+      </div>
+      <!-- Join us card -->
+      <div style="background:#f3f2f2;padding:28px 24px;display:flex;flex-direction:column;justify-content:center;border-top:3px solid #ec3013;">
+        <div style="font-size:28px;font-weight:900;color:#ec3013;margin-bottom:8px;">+</div>
+        <h4 style="font-size:16px;font-weight:800;margin-bottom:8px;">Join Our Team</h4>
+        <p style="font-size:12px;line-height:1.65;color:rgba(32,30,29,.65);margin-bottom:16px;">We're always looking for talented people to grow with us.</p>
+        <a href="#contact" style="font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#ec3013;">Apply Now →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div style="height:2px;background:#201e1d;"></div>
+
+<!-- WHY US BAND -->
+<section style="background:#ec3013;padding:72px 48px;">
+  <div style="max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:rgba(0,0,0,.15);">
+    <div style="background:#ec3013;padding:44px 36px;">
+      <div style="width:40px;height:40px;background:rgba(0,0,0,.2);display:flex;align-items:center;justify-content:center;margin-bottom:16px;">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+      </div>
+      <h3 style="color:#fff;font-size:20px;font-weight:900;margin-bottom:10px;">Innovation First</h3>
+      <p style="color:rgba(255,255,255,.8);font-size:13px;line-height:1.7;">Latest machinery and R&amp;D investment keeps us ahead of industry trends and client requirements.</p>
+    </div>
+    <div style="background:#ec3013;padding:44px 36px;border-left:2px solid rgba(0,0,0,.15);border-right:2px solid rgba(0,0,0,.15);">
+      <div style="width:40px;height:40px;background:rgba(0,0,0,.2);display:flex;align-items:center;justify-content:center;margin-bottom:16px;">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      </div>
+      <h3 style="color:#fff;font-size:20px;font-weight:900;margin-bottom:10px;">Uncompromised Quality</h3>
+      <p style="color:rgba(255,255,255,.8);font-size:13px;line-height:1.7;">Multi-stage quality checks from raw material to final shipment — excellence is non-negotiable.</p>
+    </div>
+    <div style="background:#ec3013;padding:44px 36px;">
+      <div style="width:40px;height:40px;background:rgba(0,0,0,.2);display:flex;align-items:center;justify-content:center;margin-bottom:16px;">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+      </div>
+      <h3 style="color:#fff;font-size:20px;font-weight:900;margin-bottom:10px;">Global Standards</h3>
+      <p style="color:rgba(255,255,255,.8);font-size:13px;line-height:1.7;">Internationally compliant, trusted by brands across Europe, North America, and the Middle East.</p>
+    </div>
+  </div>
+</section>
+
+<div style="height:2px;background:#201e1d;"></div>
+
+<!-- CONTACT -->
+<section id="contact" style="padding:96px 48px;background:#f3f2f2;">
+  <div style="max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:80px;">
+    <div>
+      <span style="display:block;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#ec3013;margin-bottom:12px;">Get In Touch</span>
+      <h2 style="font-size:clamp(28px,4vw,48px);font-weight:900;letter-spacing:-.02em;line-height:1.05;margin-bottom:32px;">Don't Hesitate<br>to Contact Us</h2>
+      <div style="display:flex;flex-direction:column;gap:14px;margin-bottom:36px;">
+        <a href="tel:03244129441" style="display:flex;align-items:center;gap:14px;padding:18px 20px;background:#fff;border:2px solid #201e1d;color:inherit;transition:border-color .2s;" style-hover="border-color:#ec3013">
+          <div style="width:40px;height:40px;background:#201e1d;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#f3f2f2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13 19.79 19.79 0 0 1 1.61 4.36a2 2 0 0 1 1.995-2.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          </div>
+          <div><div style="font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(32,30,29,.5);margin-bottom:2px;">Phone</div><div style="font-size:15px;font-weight:700;">03244129441</div></div>
+        </a>
+        <a href="https://wa.me/923244129441" target="_blank" style="display:flex;align-items:center;gap:14px;padding:18px 20px;background:#fff;border:2px solid #201e1d;color:inherit;transition:border-color .2s;" style-hover="border-color:#25d366">
+          <div style="width:40px;height:40px;background:#25d366;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+          </div>
+          <div><div style="font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(32,30,29,.5);margin-bottom:2px;">WhatsApp</div><div style="font-size:15px;font-weight:700;">03244129441</div></div>
+        </a>
+        <a href="mailto:champion.sprout01@gmail.com" style="display:flex;align-items:center;gap:14px;padding:18px 20px;background:#fff;border:2px solid #201e1d;color:inherit;transition:border-color .2s;" style-hover="border-color:#ec3013">
+          <div style="width:40px;height:40px;background:#201e1d;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#f3f2f2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </div>
+          <div><div style="font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(32,30,29,.5);margin-bottom:2px;">Email</div><div style="font-size:15px;font-weight:700;">champion.sprout01@gmail.com</div></div>
+        </a>
+        <div style="display:flex;align-items:center;gap:14px;padding:18px 20px;background:#fff;border:2px solid #201e1d;">
+          <div style="width:40px;height:40px;background:#201e1d;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#f3f2f2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <div><div style="font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(32,30,29,.5);margin-bottom:2px;">Location</div><div style="font-size:15px;font-weight:700;">Lahore, Pakistan</div></div>
+        </div>
+      </div>
+      <!-- Social links -->
+      <div style="display:flex;gap:10px;align-items:center;">
+        <span style="font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(32,30,29,.5);margin-right:4px;">Follow Us:</span>
+        <a href="https://facebook.com/championsprout" target="_blank" style="width:38px;height:38px;background:#201e1d;display:flex;align-items:center;justify-content:center;color:#f3f2f2;transition:background .2s;" style-hover="background:#1877f2">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        </a>
+        <a href="https://instagram.com/championsprout" target="_blank" style="width:38px;height:38px;background:#201e1d;display:flex;align-items:center;justify-content:center;color:#f3f2f2;transition:background .2s;" style-hover="background:#e4405f">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
+        </a>
+        <a href="https://linkedin.com/company/championsprout" target="_blank" style="width:38px;height:38px;background:#201e1d;display:flex;align-items:center;justify-content:center;color:#f3f2f2;transition:background .2s;" style-hover="background:#0077b5">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        </a>
+      </div>
+    </div>
+    <form style="display:flex;flex-direction:column;gap:14px;">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+        <div>
+          <label style="display:block;font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:7px;color:rgba(32,30,29,.6);">Your Name</label>
+          <input type="text" placeholder="Full name" style="width:100%;padding:12px 14px;border:2px solid #201e1d;background:#fff;font-size:14px;">
+        </div>
+        <div>
+          <label style="display:block;font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:7px;color:rgba(32,30,29,.6);">Phone</label>
+          <input type="tel" placeholder="03xxxxxxxxx" style="width:100%;padding:12px 14px;border:2px solid #201e1d;background:#fff;font-size:14px;">
+        </div>
+      </div>
+      <div>
+        <label style="display:block;font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:7px;color:rgba(32,30,29,.6);">Email</label>
+        <input type="email" placeholder="your@email.com" style="width:100%;padding:12px 14px;border:2px solid #201e1d;background:#fff;font-size:14px;">
+      </div>
+      <div>
+        <label style="display:block;font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:7px;color:rgba(32,30,29,.6);">Message</label>
+        <textarea rows="5" placeholder="Tell us about your requirements..." style="width:100%;padding:12px 14px;border:2px solid #201e1d;background:#fff;font-size:14px;resize:vertical;"></textarea>
+      </div>
+      <button type="submit" style="background:#ec3013;color:#fff;font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:15px 28px;border:none;cursor:pointer;text-align:left;transition:background .2s;">Send Message →</button>
+    </form>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer style="background:#201e1d;padding:0;">
+  <div style="border-bottom:2px solid rgba(255,255,255,.08);padding:52px 48px;">
+    <div style="max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;">
+      <div>
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:18px;">
+          <div style="width:34px;height:34px;background:#fff;display:flex;align-items:center;justify-content:center;border:2px solid rgba(255,255,255,.2);">
+            <span style="color:#201e1d;font-weight:900;font-size:14px;">CS</span>
+          </div>
+          <span style="color:#f3f2f2;font-weight:800;font-size:15px;letter-spacing:.04em;text-transform:uppercase;">Champion Sprout</span>
+        </div>
+        <p style="color:rgba(243,242,242,.5);font-size:13px;line-height:1.75;max-width:260px;margin-bottom:20px;">Premium knitted garments and integrated textile solutions from Lahore, Pakistan — built for the world.</p>
+        <div style="display:flex;gap:10px;">
+          <a href="https://facebook.com/championsprout" target="_blank" class="social-icon" style-hover="background:#1877f2">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          </a>
+          <a href="https://instagram.com/championsprout" target="_blank" class="social-icon" style-hover="background:#e4405f">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
+          </a>
+          <a href="https://linkedin.com/company/championsprout" target="_blank" class="social-icon" style-hover="background:#0077b5">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          </a>
+          <a href="https://wa.me/923244129441" target="_blank" class="social-icon" style-hover="background:#25d366">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div>
+        <div style="font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#f3f2f2;margin-bottom:18px;padding-bottom:10px;border-bottom:1px solid rgba(255,255,255,.1);">Quick Links</div>
+        <div style="display:flex;flex-direction:column;gap:9px;">
+          <a href="#about" style="color:rgba(243,242,242,.5);font-size:13px;transition:color .2s;" style-hover="color:#ec3013">About Us</a>
+          <a href="#divisions" style="color:rgba(243,242,242,.5);font-size:13px;transition:color .2s;" style-hover="color:#ec3013">Divisions</a>
+          <a href="#team" style="color:rgba(243,242,242,.5);font-size:13px;transition:color .2s;" style-hover="color:#ec3013">Our Team</a>
+          <a href="#contact" style="color:rgba(243,242,242,.5);font-size:13px;transition:color .2s;" style-hover="color:#ec3013">Contact</a>
+        </div>
+      </div>
+      <div>
+        <div style="font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#f3f2f2;margin-bottom:18px;padding-bottom:10px;border-bottom:1px solid rgba(255,255,255,.1);">Divisions</div>
+        <div style="display:flex;flex-direction:column;gap:9px;">
+          <a href="Spinning.dc.html" style="color:rgba(243,242,242,.5);font-size:13px;transition:color .2s;" style-hover="color:#ec3013">Spinning</a>
+          <a href="Knitting.dc.html" style="color:rgba(243,242,242,.5);font-size:13px;transition:color .2s;" style-hover="color:#ec3013">Knitting</a>
+          <a href="Dyeing.dc.html" style="color:rgba(243,242,242,.5);font-size:13px;transition:color .2s;" style-hover="color:#ec3013">Dyeing</a>
+          <a href="Cutting.dc.html" style="color:rgba(243,242,242,.5);font-size:13px;transition:color .2s;" style-hover="color:#ec3013">Cutting</a>
+          <a href="Printing.dc.html" style="color:rgba(243,242,242,.5);font-size:13px;transition:color .2s;" style-hover="color:#ec3013">Printing</a>
+          <a href="Stitching.dc.html" style="color:rgba(243,242,242,.5);font-size:13px;transition:color .2s;" style-hover="color:#ec3013">Stitching</a>
+        </div>
+      </div>
+      <div>
+        <div style="font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#f3f2f2;margin-bottom:18px;padding-bottom:10px;border-bottom:1px solid rgba(255,255,255,.1);">Contact</div>
+        <div style="display:flex;flex-direction:column;gap:10px;">
+          <div style="color:rgba(243,242,242,.5);font-size:13px;">Lahore, Pakistan</div>
+          <a href="tel:03244129441" style="color:rgba(243,242,242,.5);font-size:13px;transition:color .2s;" style-hover="color:#ec3013">03244129441</a>
+          <a href="mailto:champion.sprout01@gmail.com" style="color:rgba(243,242,242,.5);font-size:13px;transition:color .2s;" style-hover="color:#ec3013">champion.sprout01@gmail.com</a>
+          <a href="https://wa.me/923244129441" target="_blank" style="color:#25d366;font-size:13px;font-weight:600;">WhatsApp →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div style="padding:18px 48px;display:flex;align-items:center;justify-content:space-between;max-width:1296px;margin:0 auto;">
+    <span style="color:rgba(243,242,242,.3);font-size:12px;">© 2024 Champion Sprout. All Rights Reserved.</span>
+    <span style="color:rgba(243,242,242,.3);font-size:12px;">Owner: <span style="color:#ec3013;font-weight:700;">Maaz Ali</span></span>
+  </div>
+</footer>
+
+<!-- FLOATING BUTTONS: Call + WhatsApp -->
+<div class="float-btns">
+  <a href="tel:03244129441" class="fab" style="background:#201e1d;" title="Call Us">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13 19.79 19.79 0 0 1 1.61 4.36a2 2 0 0 1 1.995-2.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+  </a>
+  <a href="https://wa.me/923244129441" target="_blank" class="fab" style="background:#25d366;" title="WhatsApp">
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+  </a>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {}
+</script>
+</body>
+</html>

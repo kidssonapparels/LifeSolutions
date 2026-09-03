@@ -3,6 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Pre-curated beauty bundles and festive deal boxes with WhatsApp ordering.">
+<title>Life Solution | Festival Deal Boxes</title>
 <script src="./support.js"></script>
 </head>
 <body>
@@ -33,8 +35,6 @@
     .cqb:hover{background:#d4527a;color:#fff}
     .rem-btn{background:transparent;border:none;cursor:pointer;color:rgba(45,27,38,.3);font-size:16px;line-height:1;padding:0 2px;transition:color .2s}
     .rem-btn:hover{color:#d4527a}
-    .confirm-btn{flex:2;background:linear-gradient(135deg,#d4527a,#a83560);color:#fff;font-size:13px;font-weight:600;padding:13px 18px;border:none;cursor:pointer;border-radius:32px;font-family:'DM Sans',sans-serif;transition:opacity .2s}
-    .confirm-btn:disabled{opacity:.4;cursor:not-allowed}
     @media(max-width:900px){.deal-grid{grid-template-columns:1fr;gap:32px;padding:32px 0}.container{padding:0 24px}}
     @media(max-width:480px){.container{padding:0 14px}}
   </style>
@@ -80,7 +80,7 @@
     <!-- Left: Image + Savings Badge -->
     <div class="afu">
       <div style="border-radius:16px;overflow:hidden;background:linear-gradient(135deg,#2d1b26,#4f2038);aspect-ratio:4/3;position:relative;display:flex;align-items:center;justify-content:center;">
-        <image-slot id="{{ deal.id }}-img" shape="rect" style="width:100%;height:100%;position:absolute;top:0;left:0;" placeholder="{{ deal.name }} photo"></image-slot>
+        <img src="{{ deal.image }}" alt="{{ deal.name }}" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;" loading="eager"><div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(45,27,38,.05),rgba(45,27,38,.55));"></div>
         <div style="position:relative;z-index:1;text-align:center;pointer-events:none;">
           <div style="font-size:56px;margin-bottom:8px;">🎁</div>
           <div class="serif" style="color:#fff;font-size:22px;font-weight:700;">{{ deal.name }}</div>
@@ -206,43 +206,12 @@
   </div>
 </section>
 
-<sc-if value="{{ checkoutModal }}" hint-placeholder-val="{{ false }}">
-  <div style="position:fixed;inset:0;z-index:500;background:rgba(45,27,38,.7);display:flex;align-items:center;justify-content:center;padding:16px;" onClick="{{ closeModal }}">
-    <div style="background:#fff;border-radius:20px;padding:32px;max-width:440px;width:100%;box-shadow:0 24px 64px rgba(45,27,38,.3);" onClick="{{ stopProp }}">
-      <div style="text-align:center;margin-bottom:22px;">
-        <div style="font-size:36px;margin-bottom:8px;">📦</div>
-        <h3 style="font-family:'Playfair Display',serif;font-size:20px;font-weight:700;color:#2d1b26;margin-bottom:6px;">Complete Your Order</h3>
-        <p style="font-size:13px;color:rgba(45,27,38,.52);">Fill in your delivery details to continue</p>
-      </div>
-      <div style="display:flex;flex-direction:column;gap:14px;margin-bottom:20px;">
-        <div>
-          <label style="display:block;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;margin-bottom:6px;color:rgba(45,27,38,.5);">Full Name <span style="color:#d4527a;">*</span></label>
-          <input type="text" value="{{ custName }}" onChange="{{ onNameChange }}" placeholder="Apna naam likhein..." style="width:100%;padding:12px 14px;border:1.5px solid #f5dce9;border-radius:8px;background:#fef6f9;font-size:14px;font-family:'DM Sans',sans-serif;">
-        </div>
-        <div>
-          <label style="display:block;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;margin-bottom:6px;color:rgba(45,27,38,.5);">Phone Number <span style="color:#d4527a;">*</span></label>
-          <input type="tel" value="{{ custPhone }}" onChange="{{ onPhoneChange }}" placeholder="03xxxxxxxxx" style="width:100%;padding:12px 14px;border:1.5px solid #f5dce9;border-radius:8px;background:#fef6f9;font-size:14px;font-family:'DM Sans',sans-serif;">
-        </div>
-        <div>
-          <label style="display:block;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;margin-bottom:6px;color:rgba(45,27,38,.5);">Delivery Address <span style="color:#d4527a;">*</span></label>
-          <textarea value="{{ custAddr }}" onChange="{{ onAddrChange }}" placeholder="Ghar no., gali, sheher..." rows="3" style="width:100%;padding:12px 14px;border:1.5px solid #f5dce9;border-radius:8px;background:#fef6f9;font-size:14px;font-family:'DM Sans',sans-serif;resize:vertical;"></textarea>
-        </div>
-      </div>
-      <div style="display:flex;gap:10px;">
-        <button onClick="{{ closeModal }}" style="flex:1;background:#f5dce9;color:#d4527a;font-size:13px;font-weight:600;padding:13px 16px;border:none;cursor:pointer;border-radius:32px;font-family:'DM Sans',sans-serif;">Cancel</button>
-        <button onClick="{{ confirmOrder }}" disabled="{{ cannotConfirm }}" class="confirm-btn">Confirm Order 💬</button>
-      </div>
-      <p style="font-size:11px;color:rgba(45,27,38,.32);text-align:center;margin-top:10px;">Name, phone &amp; address sent with your order</p>
-    </div>
-  </div>
-</sc-if>
-
 <footer style="background:#2d1b26;padding:18px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;">
   <a href="Life Solution.dc.html" style="color:rgba(255,255,255,.45);font-size:12px;display:flex;align-items:center;gap:6px;transition:color .2s;" style-hover="color:#d4527a">
     <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5"/><path d="M12 19l-7-7 7-7"/></svg>
     Back to Life Solution
   </a>
-  <span style="color:rgba(255,255,255,.22);font-size:11px;">© 2024 Life Solution 💕</span>
+  <span style="color:rgba(255,255,255,.22);font-size:11px;">© 2026 Life Solution 💕</span>
   <a href="https://wa.me/923224707988" target="_blank" style="color:#25d366;font-size:12px;font-weight:600;">💬 WhatsApp</a>
 </footer>
 
@@ -253,9 +222,7 @@ class Component extends DCLogic {
   state = {
     did: (() => { try { return new URLSearchParams(window.location.search).get('id') || 'deal1' } catch(e) { return 'deal1' } })(),
     cart: (() => { try { return JSON.parse(localStorage.getItem('ls_cart') || '[]') } catch(e) { return [] } })(),
-    flash: false,
-    checkoutModal: false,
-    custName: '', custPhone: '', custAddr: ''
+    flash: false
   };
 
   _wa() { return 'https://wa.me/923224707988' }
@@ -263,15 +230,15 @@ class Component extends DCLogic {
 
   _deals() {
     return {
-      deal1: { id:'deal1', name:'Deal Box 1', subtitle:'Starter Kit', tag:'Save Rs.50', price:249, originalPrice:299, savings:50,
+      deal1: { id:'deal1', image:'assets/cone-studio.webp', name:'Deal Box 1', subtitle:'Starter Kit', tag:'Save Rs.50', price:249, originalPrice:299, savings:50,
         desc:'Perfect starter kit for mehendi beginners. Everything you need to create beautiful mehendi designs at home — at a special bundled price.',
         includes:[{name:'Mehendi Stencils',qty:1,price:120},{name:'Mehendi Cone',qty:1,price:180}],
         perks:['Perfect for beginners & Eid prep','Beautiful gift packaging included','Great value — save Rs.50','Free gift wrap on request'] },
-      deal2: { id:'deal2', name:'Deal Box 2', subtitle:'Classic Bundle', tag:'Save Rs.120', price:499, originalPrice:619, savings:120,
+      deal2: { id:'deal2', image:'assets/cone-box.webp', name:'Deal Box 2', subtitle:'Classic Bundle', tag:'Save Rs.120', price:499, originalPrice:619, savings:120,
         desc:'Our most popular bundle — a complete festive beauty kit. From mehendi to eyebrow shaping and elegant gajras, everything a Pakistani girl needs for any occasion.',
         includes:[{name:'Mehendi Cone',qty:2,price:360},{name:'Mehendi Stencils',qty:1,price:120},{name:'Eyebrow Arch',qty:1,price:99},{name:'Gajras',qty:1,price:220}],
         perks:['Best seller — most popular bundle','Suits all ages & occasions','Premium box packaging','Perfect Eid & wedding gift'] },
-      deal3: { id:'deal3', name:'Deal Box 3', subtitle:'Premium Collection', tag:'Best Value', price:849, originalPrice:1049, savings:200,
+      deal3: { id:'deal3', image:'assets/giftbox.webp', name:'Deal Box 3', subtitle:'Premium Collection', tag:'Best Value', price:849, originalPrice:1049, savings:200,
         desc:'The ultimate festival beauty collection! All 6 of our premium products in one gorgeous gift box. The perfect luxury gift for any special woman in your life.',
         includes:[{name:'Mehendi Stencils',qty:1,price:120},{name:'Mehendi Cone',qty:1,price:180},{name:'Eyebrow Arch',qty:1,price:99},{name:'Gajras',qty:1,price:220},{name:'Artificial Nails',qty:1,price:280},{name:'Mehendi Glitter',qty:1,price:150}],
         perks:['All 6 premium products included','Luxury gift packaging & gift wrap','Best value — save Rs.200','Perfect for weddings & bridal prep'] }
@@ -294,17 +261,13 @@ class Component extends DCLogic {
   remove(id) { const c = this.state.cart.filter(i => i.id !== id); this._save(c); this.setState({ cart: c }); }
   changeQty(id, d) { const c = this.state.cart.map(i => i.id === id ? {...i, qty: i.qty + d} : i).filter(i => i.qty > 0); this._save(c); this.setState({ cart: c }); }
 
-  openCheckoutModal() { if (!this.state.cart.length) return; this.setState({ checkoutModal: true }); }
-  closeModal() { this.setState({ checkoutModal: false }); }
-  confirmOrder() {
-    const { cart, custName, custPhone, custAddr } = this.state;
-    if (!custName.trim() || !custPhone.trim() || !custAddr.trim()) return;
+  checkout() {
+    const { cart } = this.state;
+    if (!cart.length) return;
     const sub = cart.reduce((s, i) => s + i.price * i.qty, 0);
     const total = sub + 200;
     const lines = cart.map(i => `${i.qty}x ${i.name} - Rs.${i.price * i.qty}`).join('%0A');
-    const details = `%0A%0A%F0%9F%93%A6%20Delivery%20Details%3A%0AName%3A%20${encodeURIComponent(custName)}%0APhone%3A%20${encodeURIComponent(custPhone)}%0AAddress%3A%20${encodeURIComponent(custAddr)}`;
-    window.open(this._wa() + `?text=%F0%9F%9B%8D%EF%B8%8F%20Life%20Solution%20Order%3A%0A%0A${lines}%0A%0AShipping%3A%20Rs.200%0A%E2%80%95%E2%80%95%E2%80%95%0ATotal%3A%20Rs.${total}${details}%0A%0APlease%20confirm!`, '_blank');
-    this.setState({ checkoutModal: false, custName: '', custPhone: '', custAddr: '' });
+    window.open(this._wa() + `?text=%F0%9F%9B%8D%EF%B8%8F%20Life%20Solution%20Order%3A%0A%0A${lines}%0A%0AShipping%3A%20Rs.200%0A%E2%80%95%E2%80%95%E2%80%95%E2%80%95%0ATotal%3A%20Rs.${total}%0A%0APlease%20confirm%20%26%20share%20delivery%20address!`, '_blank');
   }
 
   renderVals() {
@@ -334,16 +297,7 @@ class Component extends DCLogic {
       subtotalLabel: 'Rs. ' + sub,
       shippingLabel: 'Rs. 200',
       totalLabel: 'Rs. ' + (sub + 200),
-      onCheckout: () => this.openCheckoutModal(),
-      checkoutModal: this.state.checkoutModal,
-      custName: this.state.custName, custPhone: this.state.custPhone, custAddr: this.state.custAddr,
-      cannotConfirm: !(this.state.custName.trim() && this.state.custPhone.trim() && this.state.custAddr.trim()),
-      onNameChange: (e) => this.setState({ custName: e.target.value }),
-      onPhoneChange: (e) => this.setState({ custPhone: e.target.value }),
-      onAddrChange: (e) => this.setState({ custAddr: e.target.value }),
-      closeModal: () => this.closeModal(),
-      confirmOrder: () => this.confirmOrder(),
-      stopProp: (e) => e.stopPropagation(),
+      onCheckout: () => this.checkout(),
       scrollToCheckout: () => { const el = document.getElementById('checkout'); if(el) el.scrollIntoView({behavior:'smooth'}) }
     };
   }

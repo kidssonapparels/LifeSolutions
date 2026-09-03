@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="_ds/modernist-f435775c-c7ec-4f77-b5ad-2555162acf38/styles.css">
+  <script src="_ds/modernist-f435775c-c7ec-4f77-b5ad-2555162acf38/_ds_bundle.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <script src="./image-slot.js"></script>
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:'Archivo',sans-serif;background:#f3f2f2;color:#201e1d}
+    a{color:inherit;text-decoration:none}
+    a:hover{color:#ec3013}
+    .nav-a{color:#f3f2f2;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;transition:color .2s}
+    .nav-a:hover{color:#ec3013}
+    .spec-row{display:flex;align-items:center;gap:16px;padding:14px 0;border-bottom:1px solid rgba(32,30,29,.1)}
+    .spec-row:last-child{border-bottom:none}
+  </style>
+</helmet>
+
+<nav style="position:sticky;top:0;z-index:100;background:#201e1d;border-bottom:2px solid #ec3013;display:flex;align-items:center;justify-content:space-between;padding:0 48px;height:64px;">
+  <a href="Champion Sprout.dc.html" style="display:flex;align-items:center;gap:10px;">
+    <div style="width:34px;height:34px;background:#fff;display:flex;align-items:center;justify-content:center;border:2px solid rgba(255,255,255,.2);"><span style="color:#201e1d;font-weight:900;font-size:14px;">CS</span></div>
+    <span style="color:#f3f2f2;font-weight:800;font-size:16px;letter-spacing:.04em;text-transform:uppercase;">Champion Sprout</span>
+  </a>
+  <div style="display:flex;gap:24px;align-items:center;">
+    <a href="Champion Sprout.dc.html" class="nav-a">← Home</a>
+    <a href="Champion Sprout.dc.html#divisions" class="nav-a">All Divisions</a>
+    <a href="Champion Sprout.dc.html#contact" class="nav-a">Contact</a>
+  </div>
+</nav>
+
+<section style="background:#201e1d;padding:80px 48px 72px;position:relative;overflow:hidden;">
+  <div style="position:absolute;inset:0;background-image:repeating-linear-gradient(90deg,rgba(236,48,19,.04) 0,rgba(236,48,19,.04) 1px,transparent 1px,transparent 12.5%);pointer-events:none;"></div>
+  <div style="position:absolute;top:0;right:0;width:4px;height:100%;background:#ec3013;"></div>
+  <div style="max-width:1200px;margin:0 auto;">
+    <div style="margin-bottom:16px;"><span style="display:inline-block;background:#ec3013;color:#fff;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:4px 12px;">Division 02</span></div>
+    <h1 style="color:#f3f2f2;font-size:clamp(48px,7vw,96px);font-weight:900;line-height:1;letter-spacing:-.03em;margin-bottom:20px;">Knitting</h1>
+    <p style="color:rgba(243,242,242,.6);font-size:18px;max-width:560px;line-height:1.65;">State-of-the-art circular knitting machines producing single jersey, double jersey, interlock, rib, fleece, and piqué fabrics at scale.</p>
+  </div>
+</section>
+
+<div style="height:2px;background:#ec3013;"></div>
+
+<section style="padding:80px 48px;background:#f3f2f2;">
+  <div style="max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start;">
+    <div>
+      <span style="display:block;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#ec3013;margin-bottom:12px;">Overview</span>
+      <h2 style="font-size:clamp(24px,3vw,40px);font-weight:900;letter-spacing:-.02em;line-height:1.1;margin-bottom:20px;">Fabric Built for Performance</h2>
+      <div style="width:40px;height:2px;background:#ec3013;margin-bottom:20px;"></div>
+      <p style="font-size:15px;line-height:1.75;color:rgba(32,30,29,.72);margin-bottom:14px;">Our knitting division houses a fleet of high-speed circular knitting machines capable of producing a wide variety of fabric structures. From lightweight jersey to heavy fleece, every fabric is engineered for comfort, durability, and consistent GSM.</p>
+      <p style="font-size:15px;line-height:1.75;color:rgba(32,30,29,.72);">Supervised by Knitting Supervisor Muhia Udin, the floor operates 24/7 to meet client deadlines without compromising on quality.</p>
+    </div>
+    <div style="height:380px;">
+      <image-slot id="knit-1" shape="rect" placeholder="Drop a knitting floor photo here" style="width:100%;height:100%;"></image-slot>
+    </div>
+  </div>
+</section>
+
+<div style="height:2px;background:#201e1d;"></div>
+
+<section style="padding:80px 48px;background:#f3f2f2;">
+  <div style="max-width:1200px;margin:0 auto;">
+    <span style="display:block;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#ec3013;margin-bottom:24px;">Gallery</span>
+    <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:2px;background:#201e1d;">
+      <div style="height:300px;"><image-slot id="knit-2" shape="rect" placeholder="Circular knitting machine — drop photo" style="width:100%;height:100%;"></image-slot></div>
+      <div style="height:300px;"><image-slot id="knit-3" shape="rect" placeholder="Fabric rolls — drop photo" style="width:100%;height:100%;"></image-slot></div>
+      <div style="height:300px;"><image-slot id="knit-4" shape="rect" placeholder="GSM testing — drop photo" style="width:100%;height:100%;"></image-slot></div>
+      <div style="height:300px;"><image-slot id="knit-5" shape="rect" placeholder="Knitting floor overview — drop photo" style="width:100%;height:100%;"></image-slot></div>
+    </div>
+  </div>
+</section>
+
+<div style="height:2px;background:#201e1d;"></div>
+
+<section style="padding:80px 48px;background:#f3f2f2;">
+  <div style="max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:64px;">
+    <div>
+      <span style="display:block;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#ec3013;margin-bottom:20px;">Key Specifications</span>
+      <div class="spec-row"><div style="width:8px;height:8px;background:#ec3013;flex-shrink:0;"></div><div><strong style="font-size:14px;">Fabric Types:</strong><span style="color:rgba(32,30,29,.65);font-size:14px;"> Single Jersey, Double Jersey, Interlock, Rib, Fleece, Piqué</span></div></div>
+      <div class="spec-row"><div style="width:8px;height:8px;background:#ec3013;flex-shrink:0;"></div><div><strong style="font-size:14px;">GSM Range:</strong><span style="color:rgba(32,30,29,.65);font-size:14px;"> 120 GSM to 320 GSM</span></div></div>
+      <div class="spec-row"><div style="width:8px;height:8px;background:#ec3013;flex-shrink:0;"></div><div><strong style="font-size:14px;">Machine Types:</strong><span style="color:rgba(32,30,29,.65);font-size:14px;"> High-speed circular knitting machines</span></div></div>
+      <div class="spec-row"><div style="width:8px;height:8px;background:#ec3013;flex-shrink:0;"></div><div><strong style="font-size:14px;">Daily Capacity:</strong><span style="color:rgba(32,30,29,.65);font-size:14px;"> 20,000 kg/day</span></div></div>
+      <div class="spec-row"><div style="width:8px;height:8px;background:#ec3013;flex-shrink:0;"></div><div><strong style="font-size:14px;">Fibre Input:</strong><span style="color:rgba(32,30,29,.65);font-size:14px;"> Cotton, Polyester, Viscose, Blends</span></div></div>
+      <div class="spec-row"><div style="width:8px;height:8px;background:#ec3013;flex-shrink:0;"></div><div><strong style="font-size:14px;">Supervisor:</strong><span style="color:rgba(32,30,29,.65);font-size:14px;"> Muhia Udin</span></div></div>
+    </div>
+    <div>
+      <span style="display:block;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#ec3013;margin-bottom:20px;">Why Our Knitting</span>
+      <p style="font-size:15px;line-height:1.75;color:rgba(32,30,29,.72);margin-bottom:16px;">Vertical integration from our spinning unit means we control the entire yarn-to-fabric process, eliminating quality gaps at the handoff point. Every fabric roll is inspected for width, GSM, and defects before it moves to dyeing.</p>
+      <p style="font-size:15px;line-height:1.75;color:rgba(32,30,29,.72);">We produce custom structures on demand — from standard jersey to technical performance fabrics for sportswear and workwear clients.</p>
+    </div>
+  </div>
+</section>
+
+<section style="background:#ec3013;padding:56px 48px;">
+  <div style="max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;">
+    <div>
+      <h3 style="color:#fff;font-size:28px;font-weight:900;letter-spacing:-.02em;margin-bottom:8px;">Need Custom Knitted Fabric?</h3>
+      <p style="color:rgba(255,255,255,.8);font-size:15px;">Share your GSM, structure, and fibre requirements with us.</p>
+    </div>
+    <div style="display:flex;gap:12px;">
+      <a href="Champion Sprout.dc.html#contact" style="background:#fff;color:#ec3013;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:14px 28px;">Contact Us</a>
+      <a href="https://wa.me/923244129441" target="_blank" style="border:2px solid rgba(255,255,255,.5);color:#fff;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:14px 28px;">WhatsApp →</a>
+    </div>
+  </div>
+</section>
+
+<footer style="background:#201e1d;padding:24px 48px;display:flex;align-items:center;justify-content:space-between;">
+  <span style="color:rgba(243,242,242,.4);font-size:12px;">© 2024 Champion Sprout — Knitting Division</span>
+  <a href="Champion Sprout.dc.html" style="color:#ec3013;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;">← Back to Home</a>
+</footer>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {}
+</script>
+</body>
+</html>
