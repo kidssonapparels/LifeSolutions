@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Premium mehendi cones, stencils, gajras, artificial nails and festive beauty gift boxes.">
+<title>Life Solution | Ladies Beauty & Festival Collection</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+
+<helmet>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script src="./image-slot.js"></script>
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:'DM Sans',sans-serif;background:#fef6f9;color:#2d1b26}
+    a{color:inherit;text-decoration:none}
+    img{display:block;max-width:100%}
+    input,textarea,button,select{font-family:'DM Sans',sans-serif}
+    input:focus,textarea:focus{outline:2px solid #d4527a;outline-offset:2px}
+    .serif{font-family:'Playfair Display',serif}
+
+    @keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+    @keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
+    @keyframes floatBob{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+    @keyframes toastPop{from{opacity:0;transform:translateX(-50%) translateY(14px)}to{opacity:1;transform:translateX(-50%) translateY(0)}}
+    .afu{animation:fadeUp .7s ease both}
+    .afu2{animation:fadeUp .7s .14s ease both}
+    .afu3{animation:fadeUp .7s .28s ease both}
+    .mtrack{display:flex;animation:marquee 28s linear infinite}
+
+    /* ── Layout ── */
+    .container{max-width:1200px;margin:0 auto}
+    .sec{padding:88px 64px}
+    .g3{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+    .g4{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+    .g2{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start}
+    .hero-inner{padding:96px 64px;min-height:88vh;display:flex;flex-direction:column;justify-content:center;position:relative;overflow:hidden}.hero-copy{position:relative;z-index:2;max-width:620px}.hero-photo{position:absolute;right:0;top:0;width:48%;height:100%;z-index:1;overflow:hidden}.hero-photo::after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,#2d1b26 0%,rgba(45,27,38,.78) 18%,rgba(45,27,38,.15) 58%,rgba(45,27,38,.05) 100%)}.hero-photo img{width:100%;height:100%;object-fit:cover;object-position:center}.section-image{border-radius:18px;overflow:hidden;box-shadow:0 14px 44px rgba(45,27,38,.12);border:1px solid #f5dce9}.section-image img{width:100%;height:100%;object-fit:cover}.mini-product-image{width:100%;height:170px;object-fit:cover}.gift-image{width:100%;height:150px;object-fit:cover;border-radius:12px;margin-bottom:16px}.deal-image{width:100%;height:145px;object-fit:cover;border-radius:11px;margin-bottom:18px}.trust-image{border-radius:18px;overflow:hidden;min-height:280px}.trust-image img{width:100%;height:100%;object-fit:cover;min-height:280px}
+
+    /* ── Nav ── */
+    .nav-wrap{display:flex;align-items:center;justify-content:space-between;height:68px;padding:0 64px}
+    .nav-links{display:flex;gap:32px;align-items:center}
+    .nav-a{font-size:13px;font-weight:500;color:#2d1b26;transition:color .2s;white-space:nowrap}
+    .nav-a:hover{color:#d4527a}
+    .mob-btn{display:none;background:transparent;border:none;cursor:pointer;padding:6px;color:#2d1b26}
+    .mob-menu{display:none;flex-direction:column;background:#fff;border-bottom:2px solid #f5dce9;padding:8px 0}
+    .mob-menu.open{display:flex}
+    .mob-link{padding:14px 24px;font-size:14px;font-weight:500;color:#2d1b26;border-bottom:1px solid #fce8f0;transition:background .15s}
+    .mob-link:hover{background:#fce8f0;color:#d4527a}
+
+    /* ── Product cards ── */
+    .prod-card{background:#fff;border-radius:16px;border:1.5px solid #f5dce9;display:flex;flex-direction:column;overflow:hidden;transition:box-shadow .25s,transform .25s}
+    .prod-card:hover{box-shadow:0 12px 40px rgba(212,82,122,.15);transform:translateY(-4px)}
+    .add-btn{background:#d4527a;color:#fff;font-size:12px;font-weight:600;letter-spacing:.04em;padding:13px 20px;border:none;cursor:pointer;width:100%;border-radius:8px;transition:background .2s;display:flex;align-items:center;justify-content:center;gap:8px}
+    .add-btn:hover{background:#a83560}
+
+    /* ── Deal cards ── */
+    .deal-card{background:#fff;border-radius:16px;border:1.5px solid #f5dce9;padding:28px 22px;display:flex;flex-direction:column;transition:box-shadow .25s,transform .25s}
+    .deal-card:hover{box-shadow:0 8px 32px rgba(212,82,122,.12);transform:translateY(-2px)}
+    .deal-featured{background:linear-gradient(145deg,#2d1b26 0%,#4f2038 100%);border:1.5px solid #d4a84b}
+    .deal-add-btn{background:#d4527a;color:#fff;font-size:12px;font-weight:600;letter-spacing:.04em;padding:12px 18px;border:none;cursor:pointer;width:100%;border-radius:8px;transition:background .2s;display:flex;align-items:center;justify-content:center;gap:8px}
+    .deal-add-btn:hover{background:#a83560}
+    .deal-gold-btn{background:#d4a84b;color:#fff;font-size:12px;font-weight:600;letter-spacing:.04em;padding:12px 18px;border:none;cursor:pointer;width:100%;border-radius:8px;transition:background .2s;display:flex;align-items:center;justify-content:center;gap:8px}
+    .deal-gold-btn:hover{background:#b88c38}
+
+    /* ── Cart ── */
+    .qty-btn{width:30px;height:30px;background:#fce8f0;color:#2d1b26;border:none;cursor:pointer;font-size:15px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;border-radius:6px;transition:background .2s}
+    .qty-btn:hover{background:#d4527a;color:#fff}
+    .rem-btn{background:transparent;border:none;cursor:pointer;color:rgba(45,27,38,.3);font-size:18px;line-height:1;transition:color .2s;padding:0 2px}
+    .rem-btn:hover{color:#d4527a}
+    .cart-row{display:flex;align-items:center;gap:10px;padding:13px 0;border-bottom:1px solid #fce8f0}
+
+    /* ── Misc ── */
+    .fab-wa{position:fixed;bottom:28px;right:28px;z-index:150;width:54px;height:54px;border-radius:50%;background:#25d366;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(0,0,0,.18);transition:transform .2s}
+    .fab-wa:hover{transform:scale(1.1)}
+    .rose-divider{height:2px;background:linear-gradient(90deg,transparent,#d4527a,transparent)}
+    .topbar{background:#2d1b26;display:flex;align-items:center;justify-content:space-between;padding:7px 64px;gap:12px}
+    .topbar a{color:rgba(255,255,255,.65);font-size:11px;font-weight:600;transition:color .2s;white-space:nowrap}
+    .topbar a:hover{color:#d4527a}
+    .gift-card{background:#fff;border-radius:16px;border:1.5px solid #f5dce9;padding:26px 18px;display:flex;flex-direction:column;align-items:center;text-align:center;transition:box-shadow .25s,transform .25s}
+    .gift-card:hover{box-shadow:0 10px 32px rgba(212,82,122,.18);transform:translateY(-4px)}
+    @media(max-width:640px){.topbar{padding:6px 16px}.topbar .topbar-promo{display:none}}
+    .tag-pill{display:inline-block;background:#fce8f0;color:#d4527a;font-size:10px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:3px 10px;border-radius:20px}
+
+    /* ══ TABLET ══ */
+    @media(max-width:1024px){
+      .sec{padding:64px 32px}
+      .hero-inner{padding:72px 32px;min-height:76vh}.hero-photo{width:52%}.hero-copy{max-width:580px}
+      .nav-wrap{padding:0 32px}
+      .g3{grid-template-columns:repeat(2,1fr)}
+      .g4{grid-template-columns:repeat(2,1fr)}
+      .g2{grid-template-columns:1fr;gap:40px}
+    }
+
+    /* ══ MOBILE ══ */
+    @media(max-width:640px){
+      .sec{padding:48px 16px}
+      .hero-inner{padding:56px 16px 48px;min-height:auto}
+      .nav-wrap{padding:0 16px;height:60px}
+      .g3,.g4,.g2{grid-template-columns:1fr;gap:14px}
+      .nav-links{display:none}
+      .mob-btn{display:flex}
+      .hide-mob{display:none !important}
+      .hero-bg-txt{display:none !important}
+      .hero-stats{gap:28px !important;flex-wrap:wrap}
+      .cart-panel-inner{width:100vw !important}
+    }
+
+    /* ══ SMALL MOBILE (iPhone SE etc) ══ */
+    @media(max-width:390px){
+      .hero-inner{padding:44px 14px 40px}.hero-photo{position:relative;width:100%;height:280px;order:3;margin-top:30px;border-radius:18px}.hero-photo::after{background:linear-gradient(180deg,rgba(45,27,38,.08),rgba(45,27,38,.2))}.hero-copy{max-width:none}.hero-bg-txt{display:none !important}
+      .sec{padding:40px 14px}
+    }
+  </style>
+</helmet>
+
+<!-- ════ TOP BAR ════ -->
+<div class="topbar">
+  <span class="topbar-promo" style="color:rgba(255,255,255,.4);font-size:11px;">✨ Free gift wrap on all Deal Boxes</span>
+  <div style="display:flex;align-items:center;gap:20px;margin-left:auto;">
+    <a href="tel:03224707988" style="display:flex;align-items:center;gap:5px;">
+      <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13 19.79 19.79 0 0 1 1.61 4.36a2 2 0 0 1 1.995-2.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      03224707988
+    </a>
+    <a href="{{ waLink }}" target="_blank" style="display:flex;align-items:center;gap:5px;color:#25d366 !important;">
+      <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+      WhatsApp
+    </a>
+  </div>
+</div>
+
+<!-- ════ NAV ════ -->
+<nav style="position:sticky;top:0;z-index:100;background:#fff;border-bottom:1.5px solid #f5dce9;box-shadow:0 2px 16px rgba(212,82,122,.06);">
+  <div class="nav-wrap">
+    <a href="#" style="display:flex;align-items:center;gap:10px;flex-shrink:0;">
+      <div style="width:38px;height:38px;background:linear-gradient(135deg,#d4527a,#a83560);border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 10px rgba(212,82,122,.3);">
+        <span style="color:#fff;font-weight:800;font-size:13px;font-family:'Playfair Display',serif;">LS</span>
+      </div>
+      <div>
+        <span style="font-family:'Playfair Display',serif;font-weight:700;font-size:17px;color:#2d1b26;letter-spacing:.02em;">Life Solution</span>
+        <div style="font-size:9px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#d4527a;line-height:1;margin-top:1px;">Beauty &amp; Festival</div>
+      </div>
+    </a>
+
+    <div class="nav-links">
+      <a href="#products" class="nav-a">Products</a>
+      <a href="#deals" class="nav-a">Deal Boxes</a>
+      <a href="#gifts" class="nav-a">Gifts 🎁</a>
+    <a href="#contact" class="nav-a">Contact</a>
+      <button onClick="{{ openCart }}" style="position:relative;background:#d4527a;color:#fff;border:none;cursor:pointer;padding:10px 20px;border-radius:24px;font-size:12px;font-weight:600;letter-spacing:.04em;display:flex;align-items:center;gap:7px;transition:background .2s;box-shadow:0 2px 12px rgba(212,82,122,.3);" style-hover="background:#a83560">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+        Cart
+        <sc-if value="{{ cartCountVisible }}" hint-placeholder-val="{{ false }}">
+          <span style="background:#fff;color:#d4527a;font-size:10px;font-weight:800;width:18px;height:18px;border-radius:50%;display:flex;align-items:center;justify-content:center;position:absolute;top:-5px;right:-5px;box-shadow:0 1px 4px rgba(0,0,0,.2);">{{ cartCount }}</span>
+        </sc-if>
+      </button>
+    </div>
+
+    <!-- Mobile right: cart + hamburger -->
+    <div style="display:flex;align-items:center;gap:10px;" class="mob-btn">
+      <button onClick="{{ openCart }}" style="position:relative;background:#d4527a;color:#fff;border:none;cursor:pointer;width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 10px rgba(212,82,122,.3);">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+        <sc-if value="{{ cartCountVisible }}" hint-placeholder-val="{{ false }}">
+          <span style="background:#fff;color:#d4527a;font-size:9px;font-weight:800;width:16px;height:16px;border-radius:50%;display:flex;align-items:center;justify-content:center;position:absolute;top:-3px;right:-3px;">{{ cartCount }}</span>
+        </sc-if>
+      </button>
+      <button onClick="{{ toggleMob }}" style="background:transparent;border:none;cursor:pointer;padding:6px;color:#2d1b26;display:flex;flex-direction:column;gap:4px;align-items:center;">
+        <span style="display:block;width:20px;height:2px;background:#2d1b26;border-radius:2px;"></span>
+        <span style="display:block;width:14px;height:2px;background:#d4527a;border-radius:2px;"></span>
+        <span style="display:block;width:20px;height:2px;background:#2d1b26;border-radius:2px;"></span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile dropdown menu -->
+  <div class="{{ mobMenuClass }}">
+    <a href="#products" onClick="{{ closeMob }}" class="mob-link">✦ Products</a>
+    <a href="#deals" onClick="{{ closeMob }}" class="mob-link">✦ Deal Boxes</a>
+    <a href="#gifts" onClick="{{ closeMob }}" class="mob-link">🎁 Gift Collection</a>
+    <a href="#contact" onClick="{{ closeMob }}" class="mob-link">✦ Contact</a>
+    <a href="{{ waLink }}" target="_blank" class="mob-link" style="color:#25d366;font-weight:600;">💬 WhatsApp Order</a>
+  </div>
+</nav>
+
+<!-- ════ HERO ════ -->
+<section style="background:linear-gradient(135deg,#2d1b26 0%,#4f2038 60%,#3d1a30 100%);overflow:hidden;">
+  <div class="hero-inner">
+    <div class="hero-copy">
+    <!-- Decorative circles -->
+    <div style="position:absolute;top:-60px;right:-60px;width:320px;height:320px;border-radius:50%;border:1px solid rgba(212,168,75,.12);pointer-events:none;" class="hide-mob"></div>
+    <div style="position:absolute;top:20px;right:60px;width:180px;height:180px;border-radius:50%;border:1px solid rgba(212,82,122,.15);pointer-events:none;" class="hide-mob"></div>
+    <div style="position:absolute;bottom:-40px;left:40%;width:240px;height:240px;border-radius:50%;background:radial-gradient(circle,rgba(212,82,122,.08) 0%,transparent 70%);pointer-events:none;"></div>
+    <!-- BG text -->
+    <div style="position:absolute;bottom:20px;right:32px;font-family:'Playfair Display',serif;font-size:clamp(48px,8vw,120px);font-weight:800;color:rgba(255,255,255,.025);line-height:1;pointer-events:none;user-select:none;white-space:nowrap;" class="hero-bg-txt">Festival ✦ Beauty</div>
+
+    <div class="afu" style="margin-bottom:14px;">
+      <span style="display:inline-flex;align-items:center;gap:7px;background:rgba(212,168,75,.15);color:#d4a84b;font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:5px 14px;border-radius:20px;border:1px solid rgba(212,168,75,.3);">
+        <span>✨</span> Festival Season — Limited Offers
+      </span>
+    </div>
+
+    <h1 class="afu2 serif" style="color:#fff;font-size:clamp(34px,5.5vw,78px);font-weight:800;line-height:1.05;letter-spacing:-.02em;max-width:680px;margin-bottom:6px;">
+      Ladies Beauty<br><span style="color:#d4527a;">Festival</span><br>Deal Box
+    </h1>
+    <div class="afu2" style="display:flex;align-items:center;gap:12px;margin-bottom:18px;">
+      <div style="width:48px;height:2px;background:linear-gradient(90deg,#d4a84b,#d4527a);"></div>
+      <span style="color:rgba(255,255,255,.45);font-size:11px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;">Life Solution</span>
+    </div>
+    <p class="afu3" style="color:rgba(255,255,255,.62);font-size:16px;max-width:440px;line-height:1.7;margin-bottom:36px;">Premium stencils, mehendi cones, gajras, artificial nails &amp; more — curated festival boxes delivered across Pakistan.</p>
+
+    <div class="afu3" style="display:flex;gap:12px;flex-wrap:wrap;">
+      <a href="#products" style="background:#d4527a;color:#fff;font-size:13px;font-weight:600;padding:14px 32px;border-radius:32px;box-shadow:0 4px 20px rgba(212,82,122,.4);transition:background .2s;white-space:nowrap;" style-hover="background:#a83560">Shop Products ✦</a>
+      <a href="#deals" style="background:rgba(255,255,255,.08);color:#fff;font-size:13px;font-weight:600;padding:14px 28px;border-radius:32px;border:1.5px solid rgba(255,255,255,.2);transition:background .2s;white-space:nowrap;" style-hover="background:rgba(255,255,255,.14)">See Deal Boxes</a>
+    </div>
+
+    <div class="afu3 hero-stats" style="display:flex;gap:44px;margin-top:56px;border-top:1px solid rgba(255,255,255,.07);padding-top:32px;">
+      <div><div class="serif" style="font-size:28px;font-weight:700;color:#d4527a;line-height:1;">6</div><div style="font-size:10px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.38);margin-top:4px;">Products</div></div>
+      <div><div class="serif" style="font-size:28px;font-weight:700;color:#d4527a;line-height:1;">4</div><div style="font-size:10px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.38);margin-top:4px;">Deal Boxes</div></div>
+      <div><div class="serif" style="font-size:28px;font-weight:700;color:#d4a84b;line-height:1;">100%</div><div style="font-size:10px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.38);margin-top:4px;">Quality Checked</div></div>
+      <div><div class="serif" style="font-size:28px;font-weight:700;color:#d4a84b;line-height:1;">Fast</div><div style="font-size:10px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.38);margin-top:4px;">Delivery</div></div>
+    </div>
+    </div>
+    <div class="hero-photo" aria-label="Hina Bridal henna application photo"><img src="assets/hero-hand.webp" alt="Premium henna cone being used for bridal mehendi" loading="eager"></div>
+  </div>
+</section>
+
+<!-- ════ TICKER ════ -->
+<div style="background:linear-gradient(90deg,#d4527a,#a83560);padding:11px 0;overflow:hidden;">
+  <div class="mtrack" style="white-space:nowrap;">
+    <span style="color:#fff;font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:0 28px;">✦ Festival Deal Box</span>
+    <span style="color:rgba(255,255,255,.4);padding:0 4px;">◆</span>
+    <span style="color:#fff;font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:0 28px;">Mehendi Stencils</span>
+    <span style="color:rgba(255,255,255,.4);padding:0 4px;">◆</span>
+    <span style="color:#fff;font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:0 28px;">Mehendi Cone</span>
+    <span style="color:rgba(255,255,255,.4);padding:0 4px;">◆</span>
+    <span style="color:#fff;font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:0 28px;">Eyebrow Arch</span>
+    <span style="color:rgba(255,255,255,.4);padding:0 4px;">◆</span>
+    <span style="color:#fff;font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:0 28px;">Gajras</span>
+    <span style="color:rgba(255,255,255,.4);padding:0 4px;">◆</span>
+    <span style="color:#fff;font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:0 28px;">Artificial Nails</span>
+    <span style="color:rgba(255,255,255,.4);padding:0 4px;">◆</span>
+    <span style="color:#fff;font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:0 28px;">Mehendi Glitter</span>
+    <span style="color:rgba(255,255,255,.4);padding:0 4px;">◆</span>
+    <span style="color:#fff;font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:0 28px;">✦ Festival Deal Box</span>
+    <span style="color:rgba(255,255,255,.4);padding:0 4px;">◆</span>
+    <span style="color:#fff;font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:0 28px;">Mehendi Stencils</span>
+    <span style="color:rgba(255,255,255,.4);padding:0 4px;">◆</span>
+    <span style="color:#fff;font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:0 28px;">Mehendi Cone</span>
+    <span style="color:rgba(255,255,255,.4);padding:0 4px;">◆</span>
+    <span style="color:#fff;font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:0 28px;">Eyebrow Arch</span>
+    <span style="color:rgba(255,255,255,.4);padding:0 4px;">◆</span>
+    <span style="color:#fff;font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:0 28px;">Gajras</span>
+    <span style="color:rgba(255,255,255,.4);padding:0 4px;">◆</span>
+    <span style="color:#fff;font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:0 28px;">Artificial Nails</span>
+    <span style="color:rgba(255,255,255,.4);padding:0 4px;">◆</span>
+    <span style="color:#fff;font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:0 28px;">Mehendi Glitter</span>
+    <span style="color:rgba(255,255,255,.4);padding:0 4px;">◆</span>
+  </div>
+</div>
+
+<!-- ════ PRODUCTS ════ -->
+<section id="products" class="sec" style="background:#fef6f9;">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:52px;">
+      <span class="tag-pill" style="margin-bottom:12px;display:inline-block;">Our Collection</span>
+      <h2 class="serif" style="font-size:clamp(26px,4vw,46px);font-weight:800;color:#2d1b26;line-height:1.1;margin-bottom:12px;">Ladies Beauty<br>Products</h2>
+      <p style="font-size:14px;color:rgba(45,27,38,.55);max-width:400px;margin:0 auto;line-height:1.7;">Premium quality — perfect for festivals, weddings &amp; your daily beauty routine.</p>
+    </div>
+
+    <div class="g3">
+      <sc-for list="{{ products }}" as="prod" hint-placeholder-count="6">
+        <div class="prod-card">
+          <div style="position:relative;aspect-ratio:4/3;background:linear-gradient(135deg,#fce8f0,#f5dce9);overflow:hidden;">
+            <img class="mini-product-image" src="{{ prod.image }}" alt="{{ prod.name }}" loading="lazy">
+            <sc-if value="{{ prod.tag }}" hint-placeholder-val="{{ true }}">
+              <span class="tag-pill" style="position:absolute;top:12px;left:12px;box-shadow:0 2px 8px rgba(212,82,122,.2);">{{ prod.tag }}</span>
+            </sc-if>
+          </div>
+          <div style="padding:18px 18px 14px;flex:1;display:flex;flex-direction:column;gap:6px;">
+            <h3 style="font-size:16px;font-weight:700;color:#2d1b26;line-height:1.2;">{{ prod.name }}</h3>
+            <p style="font-size:12px;line-height:1.6;color:rgba(45,27,38,.55);flex:1;">{{ prod.desc }}</p>
+            <div style="display:flex;align-items:baseline;gap:5px;margin-top:8px;">
+              <span class="serif" style="font-size:22px;font-weight:700;color:#d4527a;">{{ prod.priceLabel }}</span>
+              <span style="font-size:11px;color:rgba(45,27,38,.4);font-weight:500;">{{ prod.unit }}</span>
+            </div>
+          </div>
+          <div style="padding:0 18px 18px;display:flex;flex-direction:column;gap:7px;">
+            <button onClick="{{ prod.onAdd }}" style="{{ prod.btnStyle }}">
+              {{ prod.btnLabel }}
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+            </button>
+            <a href="{{ prod.detailLink }}" style="display:block;text-align:center;font-size:12px;font-weight:600;color:#d4527a;padding:6px;border-radius:8px;border:1.5px solid #f5dce9;transition:background .2s;background:#fff;" style-hover="background:#fce8f0">View Details →</a>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<!-- ════ GIFT COLLECTION ════ -->
+<section id="gifts" class="sec" style="background:#fff9fb;">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:48px;">
+      <span class="tag-pill" style="margin-bottom:12px;display:inline-block;">💝 Thoughtful Giving</span>
+      <h2 class="serif" style="font-size:clamp(26px,4vw,46px);font-weight:800;color:#2d1b26;line-height:1.1;margin-bottom:12px;">Gift Collection</h2>
+      <p style="font-size:14px;color:rgba(45,27,38,.55);max-width:420px;margin:0 auto;line-height:1.7;">Choose the perfect beauty gift for your loved one — tap a name, and we'll help you pack a beautiful gift box on WhatsApp!</p>
+    </div>
+    <div class="section-image" style="height:300px;margin-bottom:28px;position:relative;">
+      <img src="assets/giftbox.webp" alt="Luxury bridal beauty gift box" loading="lazy">
+      <div style="position:absolute;inset:0;background:linear-gradient(90deg,rgba(45,27,38,.82),rgba(45,27,38,.15));display:flex;align-items:center;padding:32px;">
+        <div style="max-width:440px;color:#fff;">
+          <div style="font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#d4a84b;margin-bottom:8px;">Made to Gift</div>
+          <h3 class="serif" style="font-size:clamp(24px,4vw,38px);line-height:1.08;margin-bottom:10px;">Beautiful boxes for the people you love.</h3>
+          <p style="font-size:13px;line-height:1.7;color:rgba(255,255,255,.75);">Choose a ready-made collection or build a custom beauty box for weddings, Eid and special moments.</p>
+        </div>
+      </div>
+    </div>
+    <div class="g3" style="gap:20px;">
+      <sc-for list="{{ giftLinks }}" as="gf" hint-placeholder-count="5">
+        <div class="gift-card">
+          <img class="gift-image" src="{{ gf.image }}" alt="{{ gf.name }} gift collection" loading="lazy">
+          <div style="font-size:30px;margin-bottom:8px;line-height:1;">{{ gf.emoji }}</div>
+          <h3 class="serif" style="font-size:20px;font-weight:700;color:#2d1b26;margin-bottom:4px;">{{ gf.name }}</h3>
+          <p style="font-size:11px;color:#d4527a;font-weight:600;letter-spacing:.04em;text-transform:uppercase;margin-bottom:14px;">{{ gf.tagline }}</p>
+          <p style="font-size:12px;color:rgba(45,27,38,.5);background:#fce8f0;padding:8px 14px;border-radius:10px;width:100%;margin-bottom:18px;line-height:1.6;">{{ gf.productsList }}</p>
+          <a href="{{ gf.waLink }}" target="_blank" style="background:linear-gradient(135deg,#d4527a,#a83560);color:#fff;font-size:12px;font-weight:600;padding:11px 20px;border-radius:24px;display:flex;align-items:center;gap:6px;width:100%;justify-content:center;box-shadow:0 2px 12px rgba(212,82,122,.25);transition:opacity .2s;text-decoration:none;" style-hover="opacity:.85">
+            🎁 Gift {{ gf.name }}
+          </a>
+          <a href="{{ gf.detailLink }}" style="display:block;text-align:center;font-size:11px;font-weight:600;color:rgba(45,27,38,.45);padding:6px;margin-top:6px;transition:color .2s;text-decoration:none;" style-hover="color:#d4527a">View Gift Details →</a>
+        </div>
+      </sc-for>
+
+      <!-- Custom Gift Box -->
+      <div style="background:linear-gradient(145deg,#d4527a,#a83560);border-radius:16px;padding:26px 18px;display:flex;flex-direction:column;align-items:center;text-align:center;box-shadow:0 8px 28px rgba(212,82,122,.3);">
+        <div style="font-size:46px;margin-bottom:12px;line-height:1;">✨</div>
+        <h3 class="serif" style="font-size:20px;font-weight:700;color:#fff;margin-bottom:4px;">Custom Gift</h3>
+        <p style="font-size:11px;color:rgba(255,255,255,.7);font-weight:600;letter-spacing:.04em;text-transform:uppercase;margin-bottom:14px;">Build your own box</p>
+        <p style="font-size:12px;color:rgba(255,255,255,.65);line-height:1.65;margin-bottom:18px;flex:1;">Choose any products, recipient, budget &amp; packaging — we'll create a unique gift box just for you!</p>
+        <a href="{{ customGiftWA }}" target="_blank" style="background:#fff;color:#d4527a;font-size:12px;font-weight:700;padding:11px 20px;border-radius:24px;display:flex;align-items:center;gap:6px;width:100%;justify-content:center;transition:background .2s;text-decoration:none;" style-hover="background:#fce8f0">
+          💬 Build Custom Gift
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div style="height:1px;background:linear-gradient(90deg,transparent,#f5dce9,transparent);"></div>
+
+<!-- ════ DEAL BOXES ════ -->
+<section id="deals" class="sec" style="background:linear-gradient(180deg,#f9ecf3 0%,#fef6f9 100%);">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:52px;">
+      <span class="tag-pill" style="margin-bottom:12px;display:inline-block;">Festival Collections</span>
+      <h2 class="serif" style="font-size:clamp(26px,4vw,46px);font-weight:800;color:#2d1b26;line-height:1.1;margin-bottom:12px;">Deal Boxes</h2>
+      <p style="font-size:14px;color:rgba(45,27,38,.55);max-width:400px;margin:0 auto;line-height:1.7;">Pre-curated festival kits at special prices — or build your own custom box.</p>
+    </div>
+
+    <div class="g4">
+      <sc-for list="{{ dealBoxes }}" as="deal" hint-placeholder-count="3">
+        <div class="{{ deal.cardClass }}">
+          <img class="deal-image" src="{{ deal.image }}" alt="{{ deal.name }}" loading="lazy">
+          <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;">
+            <span style="font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:{{ deal.subtitleColor }};">{{ deal.subtitle }}</span>
+            <span style="background:{{ deal.tagBg }};color:{{ deal.tagColor }};font-size:9px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:3px 9px;border-radius:12px;">{{ deal.tag }}</span>
+          </div>
+          <h3 class="serif" style="font-size:21px;font-weight:700;color:{{ deal.titleColor }};margin-bottom:16px;">{{ deal.name }}</h3>
+          <div style="width:28px;height:2px;background:{{ deal.lineColor }};margin-bottom:16px;border-radius:2px;"></div>
+          <div style="flex:1;display:flex;flex-direction:column;gap:7px;margin-bottom:18px;">
+            <sc-for list="{{ deal.items }}" as="di" hint-placeholder-count="3">
+              <div style="display:flex;align-items:center;gap:8px;">
+                <span style="color:{{ deal.bulletColor }};font-size:13px;">✦</span>
+                <span style="font-size:12px;color:{{ deal.itemColor }};">{{ di }}</span>
+              </div>
+            </sc-for>
+          </div>
+          <div style="margin-bottom:14px;">
+            <span class="serif" style="font-size:24px;font-weight:700;color:{{ deal.priceColor }};">Rs. {{ deal.price }}</span>
+            <span style="font-size:12px;color:{{ deal.origPriceColor }};text-decoration:line-through;margin-left:6px;">Rs. {{ deal.originalPrice }}</span>
+          </div>
+          <button onClick="{{ deal.onAdd }}" class="{{ deal.btnClass }}">
+            Add to Cart
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+          </button>
+          <a href="{{ deal.detailLink }}" style="display:block;text-align:center;font-size:12px;font-weight:600;color:{{ deal.detailColor }};padding:6px;margin-top:6px;transition:opacity .2s;text-decoration:none;" style-hover="opacity:.7">View Details →</a>
+        </div>
+      </sc-for>
+
+      <!-- Custom Deal Box -->
+      <div style="background:linear-gradient(145deg,rgba(212,82,122,.96),rgba(168,53,96,.96)),url(assets/giftbox.webp) center/cover;border-radius:16px;border:1.5px solid #c93e6e;padding:28px 22px;display:flex;flex-direction:column;box-shadow:0 8px 32px rgba(212,82,122,.25);">
+        <div style="width:44px;height:44px;background:rgba(255,255,255,.15);border-radius:50%;display:flex;align-items:center;justify-content:center;margin-bottom:18px;">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        </div>
+        <h3 class="serif" style="font-size:21px;font-weight:700;color:#fff;line-height:1.1;margin-bottom:14px;">Custom<br>Deal Box</h3>
+        <div style="width:28px;height:2px;background:rgba(255,255,255,.4);margin-bottom:14px;border-radius:2px;"></div>
+        <p style="font-size:12px;line-height:1.65;color:rgba(255,255,255,.75);flex:1;margin-bottom:20px;">Choose any products and we'll build a custom bundle just for you. Message us on WhatsApp!</p>
+        <a href="{{ customWALink }}" target="_blank" style="background:#fff;color:#d4527a;font-size:12px;font-weight:700;letter-spacing:.04em;padding:12px 18px;border-radius:8px;display:flex;align-items:center;justify-content:center;gap:8px;transition:background .2s;box-shadow:0 2px 8px rgba(0,0,0,.1);" style-hover="background:#fce8f0">
+          💬 WhatsApp Us
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════ TRUST ════ -->
+<section style="background:linear-gradient(135deg,#2d1b26,#4f2038);padding:56px 64px;" class="sec">
+  <div class="container">
+    <div class="g2" style="gap:28px;align-items:stretch;margin-bottom:28px;">
+      <div class="trust-image"><img src="assets/cone-roses.webp" alt="Premium henna cone styled with roses and traditional décor" loading="lazy"></div>
+      <div style="display:flex;flex-direction:column;justify-content:center;">
+        <div style="font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#d4a84b;margin-bottom:10px;">Why Life Solution</div>
+        <h3 class="serif" style="font-size:clamp(26px,4vw,42px);line-height:1.08;color:#fff;margin-bottom:12px;">Traditional beauty, presented with modern convenience.</h3>
+        <p style="font-size:13px;line-height:1.8;color:rgba(255,255,255,.58);max-width:480px;">Shop from one place, review the products clearly, add what you need to your cart, and send the order directly through WhatsApp.</p>
+      </div>
+    </div>
+    <div class="g3" style="gap:24px;">
+      <div style="background:rgba(255,255,255,.06);border-radius:14px;padding:28px 24px;border:1px solid rgba(255,255,255,.08);display:flex;align-items:flex-start;gap:16px;">
+        <div style="width:44px;height:44px;background:linear-gradient(135deg,#d4527a,#a83560);border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:20px;">🚚</div>
+        <div>
+          <h4 style="color:#fff;font-size:14px;font-weight:700;margin-bottom:5px;">Fast Delivery</h4>
+          <p style="color:rgba(255,255,255,.48);font-size:12px;line-height:1.6;">Quick dispatch across all of Pakistan.</p>
+        </div>
+      </div>
+      <div style="background:rgba(255,255,255,.06);border-radius:14px;padding:28px 24px;border:1px solid rgba(212,168,75,.2);display:flex;align-items:flex-start;gap:16px;">
+        <div style="width:44px;height:44px;background:linear-gradient(135deg,#d4a84b,#b88c38);border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:20px;">✨</div>
+        <div>
+          <h4 style="color:#fff;font-size:14px;font-weight:700;margin-bottom:5px;">Quality Checked</h4>
+          <p style="color:rgba(255,255,255,.48);font-size:12px;line-height:1.6;">Carefully selected products for your beauty routine.</p>
+        </div>
+      </div>
+      <div style="background:rgba(255,255,255,.06);border-radius:14px;padding:28px 24px;border:1px solid rgba(255,255,255,.08);display:flex;align-items:flex-start;gap:16px;">
+        <div style="width:44px;height:44px;background:#25d366;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:20px;">💬</div>
+        <div>
+          <h4 style="color:#fff;font-size:14px;font-weight:700;margin-bottom:5px;">WhatsApp Order</h4>
+          <p style="color:rgba(255,255,255,.48);font-size:12px;line-height:1.6;">Easy ordering — message us anytime.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════ CONTACT ════ -->
+<section id="contact" class="sec" style="background:#fef6f9;">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:48px;">
+      <span class="tag-pill" style="margin-bottom:12px;display:inline-block;">Get In Touch</span>
+      <h2 class="serif" style="font-size:clamp(26px,4vw,44px);font-weight:800;color:#2d1b26;line-height:1.1;">Order or Ask Anything 💕</h2>
+    </div>
+    <div class="g2">
+      <div>
+        <div class="section-image" style="height:240px;margin-bottom:24px;"><img src="assets/cone-application.webp" alt="Henna application detail" loading="lazy"></div>
+        <p style="font-size:15px;line-height:1.75;color:rgba(45,27,38,.65);margin-bottom:28px;">Add items to your cart and tap "Order via WhatsApp" — or message us directly for bulk orders and custom boxes.</p>
+        <a href="{{ waLink }}" target="_blank" style="display:flex;align-items:center;gap:14px;padding:18px 20px;background:#fff;border-radius:12px;border:1.5px solid #f5dce9;color:inherit;transition:box-shadow .2s;box-shadow:0 2px 12px rgba(212,82,122,.07);" style-hover="box-shadow:0 4px 20px rgba(37,211,102,.15)">
+          <div style="width:42px;height:42px;background:#25d366;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+          </div>
+          <div>
+            <div style="font-size:10px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:rgba(45,27,38,.45);margin-bottom:2px;">WhatsApp</div>
+            <div style="font-size:15px;font-weight:700;color:#2d1b26;">Message Us to Order</div>
+          </div>
+        </a>
+      </div>
+      <div style="background:#fff;border-radius:16px;border:1.5px solid #f5dce9;padding:32px;box-shadow:0 4px 24px rgba(212,82,122,.07);">
+        <h3 class="serif" style="font-size:18px;font-weight:700;margin-bottom:20px;color:#2d1b26;">Quick Order Inquiry 💌</h3>
+        <div style="display:flex;flex-direction:column;gap:14px;">
+          <div>
+            <label style="display:block;font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;margin-bottom:6px;color:rgba(45,27,38,.5);">Your Name</label>
+            <input type="text" placeholder="Full name" style="width:100%;padding:12px 14px;border:1.5px solid #f5dce9;border-radius:8px;background:#fef6f9;font-size:14px;">
+          </div>
+          <div>
+            <label style="display:block;font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;margin-bottom:6px;color:rgba(45,27,38,.5);">Phone / WhatsApp</label>
+            <input type="tel" placeholder="03xxxxxxxxx" style="width:100%;padding:12px 14px;border:1.5px solid #f5dce9;border-radius:8px;background:#fef6f9;font-size:14px;">
+          </div>
+          <div>
+            <label style="display:block;font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;margin-bottom:6px;color:rgba(45,27,38,.5);">Your Order</label>
+            <textarea rows="3" placeholder="e.g. Deal Box 2 + 2 cones..." style="width:100%;padding:12px 14px;border:1.5px solid #f5dce9;border-radius:8px;background:#fef6f9;font-size:14px;resize:vertical;"></textarea>
+          </div>
+          <button onClick="{{ onFormWA }}" style="background:linear-gradient(135deg,#d4527a,#a83560);color:#fff;font-size:13px;font-weight:600;padding:14px 20px;border:none;cursor:pointer;border-radius:32px;display:flex;align-items:center;justify-content:center;gap:8px;box-shadow:0 4px 16px rgba(212,82,122,.3);transition:opacity .2s;" style-hover="opacity:.88">
+            💬 Send via WhatsApp
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════ FOOTER ════ -->
+<footer style="background:linear-gradient(135deg,#2d1b26,#4f2038);padding:52px 64px 0;">
+  <div class="container">
+    <div class="g3" style="gap:40px;padding-bottom:40px;border-bottom:1px solid rgba(255,255,255,.07);">
+      <div>
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px;">
+          <div style="width:36px;height:36px;background:linear-gradient(135deg,#d4527a,#a83560);border-radius:50%;display:flex;align-items:center;justify-content:center;">
+            <span style="color:#fff;font-weight:800;font-size:13px;font-family:'Playfair Display',serif;">LS</span>
+          </div>
+          <span style="font-family:'Playfair Display',serif;font-weight:700;font-size:16px;color:#fff;">Life Solution</span>
+        </div>
+        <p style="color:rgba(255,255,255,.42);font-size:13px;line-height:1.75;max-width:240px;margin-bottom:18px;">Premium ladies beauty &amp; festival products — mehendi, gajras, nails &amp; more. ✨</p>
+        <a href="{{ waLink }}" target="_blank" style="display:inline-flex;align-items:center;gap:8px;background:#25d366;color:#fff;font-size:12px;font-weight:600;padding:9px 18px;border-radius:24px;box-shadow:0 2px 10px rgba(37,211,102,.3);">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.297.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+          WhatsApp Order
+        </a>
+      </div>
+      <div>
+        <div style="font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#d4527a;margin-bottom:16px;">Products</div>
+        <div style="display:flex;flex-direction:column;gap:9px;">
+          <a href="#products" style="color:rgba(255,255,255,.42);font-size:13px;transition:color .2s;" style-hover="color:#d4527a">Stencils</a>
+          <a href="#products" style="color:rgba(255,255,255,.42);font-size:13px;transition:color .2s;" style-hover="color:#d4527a">Mehendi Cone</a>
+          <a href="#products" style="color:rgba(255,255,255,.42);font-size:13px;transition:color .2s;" style-hover="color:#d4527a">Eyebrow Arch</a>
+          <a href="#products" style="color:rgba(255,255,255,.42);font-size:13px;transition:color .2s;" style-hover="color:#d4527a">Gajras</a>
+          <a href="#products" style="color:rgba(255,255,255,.42);font-size:13px;transition:color .2s;" style-hover="color:#d4527a">Artificial Nails</a>
+          <a href="#products" style="color:rgba(255,255,255,.42);font-size:13px;transition:color .2s;" style-hover="color:#d4527a">Mehendi Glitter</a>
+        </div>
+      </div>
+      <div>
+        <div style="font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#d4527a;margin-bottom:16px;">Deal Boxes</div>
+        <div style="display:flex;flex-direction:column;gap:9px;">
+          <a href="#deals" style="color:rgba(255,255,255,.42);font-size:13px;transition:color .2s;" style-hover="color:#d4527a">Deal Box 1 — Starter</a>
+          <a href="#deals" style="color:rgba(255,255,255,.42);font-size:13px;transition:color .2s;" style-hover="color:#d4527a">Deal Box 2 — Classic</a>
+          <a href="#deals" style="color:rgba(255,255,255,.42);font-size:13px;transition:color .2s;" style-hover="color:#d4527a">Deal Box 3 — Premium</a>
+          <a href="#deals" style="color:rgba(255,255,255,.42);font-size:13px;transition:color .2s;" style-hover="color:#d4527a">Custom Deal Box</a>
+        </div>
+      </div>
+    </div>
+    <div style="padding:18px 0;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;">
+      <span style="color:rgba(255,255,255,.25);font-size:12px;">© 2026 Life Solution. All Rights Reserved. 💕</span>
+      <span style="color:rgba(255,255,255,.25);font-size:12px;">Made with ❤️ for Pakistani ladies</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ════ CART OVERLAY ════ -->
+<div style="{{ cartOverlayStyle }}" onClick="{{ closeCart }}"></div>
+
+<!-- ════ CART PANEL ════ -->
+<div style="{{ cartPanelStyle }}" class="cart-panel-inner">
+  <div style="padding:18px 20px;border-bottom:1.5px solid #f5dce9;display:flex;align-items:center;justify-content:space-between;flex-shrink:0;background:#fff;">
+    <div>
+      <h2 class="serif" style="font-size:17px;font-weight:700;color:#2d1b26;">Your Cart 🛍️</h2>
+      <sc-if value="{{ cartCountVisible }}" hint-placeholder-val="{{ false }}">
+        <span style="font-size:11px;color:rgba(45,27,38,.45);font-weight:500;">{{ cartCount }} item(s)</span>
+      </sc-if>
+    </div>
+    <button onClick="{{ closeCart }}" style="background:#fce8f0;border:none;cursor:pointer;width:34px;height:34px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:700;color:#d4527a;transition:background .2s;" style-hover="background:#d4527a;color:#fff">×</button>
+  </div>
+
+  <div style="flex:1;overflow-y:auto;padding:0 20px;background:#fef6f9;">
+    <sc-if value="{{ cartEmpty }}" hint-placeholder-val="{{ true }}">
+      <div style="padding:52px 0;text-align:center;display:flex;flex-direction:column;align-items:center;gap:12px;">
+        <div style="font-size:48px;line-height:1;">🛒</div>
+        <p style="font-size:14px;color:rgba(45,27,38,.45);font-weight:500;">Your cart is empty</p>
+        <button onClick="{{ closeCart }}" style="background:#d4527a;color:#fff;font-size:12px;font-weight:600;padding:10px 22px;border:none;cursor:pointer;border-radius:24px;margin-top:4px;">Shop Now ✦</button>
+      </div>
+    </sc-if>
+    <sc-for list="{{ cartItems }}" as="ci" hint-placeholder-count="0">
+      <div class="cart-row">
+        <div style="flex:1;min-width:0;">
+          <div style="font-size:13px;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:#2d1b26;margin-bottom:2px;">{{ ci.name }}</div>
+          <div style="font-size:11px;color:rgba(45,27,38,.45);">Rs. {{ ci.price }} each</div>
+        </div>
+        <div style="display:flex;align-items:center;gap:4px;flex-shrink:0;">
+          <button class="qty-btn" onClick="{{ ci.onDec }}">−</button>
+          <span style="font-size:13px;font-weight:700;min-width:22px;text-align:center;color:#2d1b26;">{{ ci.qty }}</span>
+          <button class="qty-btn" onClick="{{ ci.onInc }}">+</button>
+        </div>
+        <span class="serif" style="font-size:13px;font-weight:700;color:#d4527a;min-width:60px;text-align:right;flex-shrink:0;">{{ ci.subtotal }}</span>
+        <button class="rem-btn" onClick="{{ ci.onRemove }}">×</button>
+      </div>
+    </sc-for>
+  </div>
+
+  <div style="padding:18px 20px;border-top:1.5px solid #f5dce9;flex-shrink:0;background:#fff;">
+    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;padding:12px 16px;background:#fce8f0;border-radius:10px;">
+      <span style="font-size:12px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:rgba(45,27,38,.6);">Total</span>
+      <span class="serif" style="font-size:22px;font-weight:700;color:#d4527a;">{{ cartTotal }}</span>
+    </div>
+    <button onClick="{{ onCheckout }}" style="background:linear-gradient(135deg,#d4527a,#a83560);color:#fff;font-size:12px;font-weight:600;letter-spacing:.04em;padding:14px 20px;border:none;cursor:pointer;width:100%;border-radius:32px;display:flex;align-items:center;justify-content:center;gap:8px;margin-bottom:8px;box-shadow:0 4px 16px rgba(212,82,122,.3);transition:opacity .2s;" style-hover="opacity:.88">
+      💬 Order via WhatsApp
+    </button>
+    <p style="font-size:11px;color:rgba(45,27,38,.35);text-align:center;">Cart details sent to WhatsApp automatically</p>
+  </div>
+</div>
+
+<!-- ════ TOAST ════ -->
+<sc-if value="{{ toastVisible }}" hint-placeholder-val="{{ false }}">
+  <div style="position:fixed;bottom:32px;left:50%;z-index:400;background:#2d1b26;color:#fff;padding:12px 22px;font-size:13px;font-weight:600;border-radius:32px;white-space:nowrap;animation:toastPop .3s ease both;transform:translateX(-50%);box-shadow:0 4px 20px rgba(45,27,38,.3);border:1.5px solid #d4527a;">
+    ✨ {{ toastMsg }} added!
+  </div>
+</sc-if>
+
+<!-- ════ FLOAT WhatsApp ════ -->
+<a href="{{ waLink }}" target="_blank" class="fab-wa" title="WhatsApp Order">
+  <svg width="26" height="26" viewBox="0 0 24 24" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+</a>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{
+  &quot;$preview&quot;: {&quot;width&quot;: 1440, &quot;height&quot;: 900},
+  &quot;whatsappNumber&quot;: {
+    &quot;editor&quot;: &quot;text&quot;,
+    &quot;default&quot;: &quot;923224707988&quot;,
+    &quot;section&quot;: &quot;Store Settings&quot;
+  }
+}">
+
+class Component extends DCLogic {
+  state = {
+    cart: (() => { try { return JSON.parse(localStorage.getItem('ls_cart') || '[]') } catch(e) { return [] } })(),
+    cartOpen: false,
+    mobOpen: false,
+    addedId: null,
+    addedName: ''
+  };
+
+  _wa() { return 'https://wa.me/' + (this.props.whatsappNumber || '923224707988') }
+  _save(c) { try { localStorage.setItem('ls_cart', JSON.stringify(c)) } catch(e) {} }
+
+  add(id, name, price) {
+    let c = this.state.cart;
+    const idx = c.findIndex(i => i.id === id);
+    if (idx >= 0) c = c.map(i => i.id === id ? {...i, qty: i.qty + 1} : i);
+    else c = [...c, {id, name, price, qty: 1}];
+    this._save(c);
+    this.setState({ cart: c, addedId: id, addedName: name });
+    setTimeout(() => this.setState({ addedId: null, addedName: '' }), 1800);
+  }
+
+  remove(id) {
+    const c = this.state.cart.filter(i => i.id !== id);
+    this._save(c);
+    this.setState({ cart: c });
+  }
+
+  qty(id, d) {
+    const c = this.state.cart.map(i => i.id === id ? {...i, qty: i.qty + d} : i).filter(i => i.qty > 0);
+    this._save(c);
+    this.setState({ cart: c });
+  }
+
+  checkout() {
+    const { cart } = this.state;
+    if (!cart.length) return;
+    const lines = cart.map(i => `${i.qty}x ${i.name} - Rs.${i.price * i.qty}`).join('%0A');
+    const total = cart.reduce((s, i) => s + i.price * i.qty, 0);
+    window.open(this._wa() + `?text=%F0%9F%9B%8D%EF%B8%8F%20Life%20Solution%20Order%3A%0A%0A${lines}%0A%0ATotal%3A%20Rs.${total}`, '_blank');
+  }
+
+  renderVals() {
+    const { cart, cartOpen, mobOpen, addedId, addedName } = this.state;
+    const count = cart.reduce((s, i) => s + i.qty, 0);
+    const total = cart.reduce((s, i) => s + i.price * i.qty, 0);
+
+    const prods = [
+      { id: 'stencils', name: 'Stencils', desc: 'Beautiful floral & geometric mehendi patterns', price: 120, unit: 'per pack', tag: 'Best Seller', image: 'assets/stencils.webp' },
+      { id: 'cone', name: 'Mehendi Cone', desc: 'Ready-to-use premium henna cone, rich dark color', price: 180, unit: 'per cone', tag: 'Popular', image: 'assets/cone-studio.webp' },
+      { id: 'arch', name: 'Eyebrow Arch', desc: 'Professional eyebrow shaping stencil kit', price: 99, unit: 'per set', tag: 'New', image: 'assets/eyebrow.webp' },
+      { id: 'gajras', name: 'Gajras', desc: 'Elegant flower hair garlands for weddings & festivals', price: 220, unit: 'per piece', tag: 'Festival Pick', image: 'assets/gajras.webp' },
+      { id: 'nails', name: 'Artificial Nails', desc: 'Salon-style press-on nails — gorgeous at home', price: 280, unit: 'per set', tag: 'Trending', image: 'assets/nails.webp' },
+      { id: 'glitter', name: 'Mehendi Glitter', desc: 'Shimmer sparkle powder for bridal & festive looks', price: 150, unit: 'per pack', tag: '', image: 'assets/glitter.webp' },
+    ];
+
+    const products = prods.map(p => {
+      const isAdded = addedId === p.id;
+      return {
+        detailLink: 'product.dc.html?id=' + p.id,
+        ...p,
+        priceLabel: 'Rs. ' + p.price,
+        onAdd: () => this.add(p.id, p.name, p.price),
+        btnLabel: isAdded ? '✓ Added!' : 'Add to Cart',
+        btnStyle: {
+          background: isAdded
+            ? 'linear-gradient(135deg,#25a244,#1e8236)'
+            : 'linear-gradient(135deg,#d4527a,#a83560)',
+          color: '#fff', fontSize: '12px', fontWeight: '600',
+          letterSpacing: '.04em', padding: '13px 20px',
+          border: 'none', cursor: 'pointer', width: '100%',
+          borderRadius: '8px', transition: 'opacity .2s',
+          display: 'flex', alignItems: 'center', justifyContent: 'center',
+          gap: '8px', fontFamily: "'DM Sans',sans-serif",
+          boxShadow: '0 2px 12px rgba(212,82,122,.25)'
+        }
+      };
+    });
+
+    const cartItems = cart.map(i => ({
+      ...i,
+      subtotal: 'Rs. ' + (i.price * i.qty),
+      onInc: () => this.qty(i.id, 1),
+      onDec: () => this.qty(i.id, -1),
+      onRemove: () => this.remove(i.id)
+    }));
+
+    const dealDefs = [
+      { id: 'deal1', name: 'Deal Box 1', subtitle: 'Starter Kit', price: 249, originalPrice: 299,
+        tag: 'Save Rs.50', featured: false, image: 'assets/cone-studio.webp',
+        items: ['Stencils ×1', 'Mehendi Cone ×1'],
+        onAdd: () => this.add('deal1', 'Deal Box 1 — Starter Kit', 249) },
+      { id: 'deal2', name: 'Deal Box 2', subtitle: 'Classic Bundle', price: 499, originalPrice: 619,
+        tag: 'Save Rs.120', featured: false, image: 'assets/cone-box.webp',
+        items: ['Mehendi Cone ×2', 'Stencils ×1', 'Eyebrow Arch ×1', 'Gajras ×1'],
+        onAdd: () => this.add('deal2', 'Deal Box 2 — Classic', 499) },
+      { id: 'deal3', name: 'Deal Box 3', subtitle: 'Premium Collection', price: 849, originalPrice: 1049,
+        tag: 'Best Value ✨', featured: true, image: 'assets/giftbox.webp',
+        items: ['All 6 products included', 'Special packaging', 'Gift wrap included'],
+        onAdd: () => this.add('deal3', 'Deal Box 3 — Premium', 849) }
+    ];
+
+    const dealBoxes = dealDefs.map(d => ({
+      ...d,
+      detailLink: 'dealbox.dc.html?id=' + d.id,
+      cardClass: d.featured ? 'deal-card deal-featured' : 'deal-card',
+      titleColor: d.featured ? '#fff' : '#2d1b26',
+      subtitleColor: d.featured ? 'rgba(255,255,255,.5)' : 'rgba(45,27,38,.45)',
+      tagBg: d.featured ? '#d4a84b' : '#fce8f0',
+      tagColor: d.featured ? '#2d1b26' : '#d4527a',
+      lineColor: d.featured ? '#d4a84b' : '#d4527a',
+      bulletColor: d.featured ? '#d4a84b' : '#d4527a',
+      itemColor: d.featured ? 'rgba(255,255,255,.7)' : 'rgba(45,27,38,.65)',
+      priceColor: d.featured ? '#d4a84b' : '#d4527a',
+      origPriceColor: d.featured ? 'rgba(255,255,255,.35)' : 'rgba(45,27,38,.35)',
+      btnClass: d.featured ? 'deal-gold-btn' : 'deal-add-btn',
+      detailColor: d.featured ? 'rgba(255,255,255,.55)' : 'rgba(45,27,38,.5)'
+    }));
+
+    const wa = this._wa();
+    const customMsg = encodeURIComponent('Hi! I want a Custom Deal Box. Please help me build one 💕');
+
+    const giftDefs = [
+      { id: 'sister', emoji: '👯‍♀️', name: 'Sister', tagline: 'Trendy & fun', image: 'assets/gajras.webp', products: ['Mehendi Stencils', 'Gajras', 'Mehendi Glitter'] },
+      { id: 'mother', emoji: '💐', name: 'Mother', tagline: 'Elegant & classic', image: 'assets/cone-box.webp', products: ['Mehendi Cone', 'Mehendi Stencils'] },
+      { id: 'wife', emoji: '💍', name: 'Wife', tagline: 'Premium bridal', image: 'assets/nails.webp', products: ['Artificial Nails', 'Gajras', 'Mehendi Glitter'] },
+      { id: 'daughter', emoji: '🌸', name: 'Daughter', tagline: 'Fun & modern', image: 'assets/eyebrow.webp', products: ['Eyebrow Arch', 'Artificial Nails'] },
+      { id: 'kazan', emoji: '🤝', name: 'Cousin', tagline: 'Thoughtful cousin gift', image: 'assets/stencils.webp', products: ['Stencils', 'Mehendi Cone', 'Eyebrow Arch'] },
+    ];
+    const giftLinks = giftDefs.map(g => ({
+      ...g,
+      productsList: g.products.join(' · '),
+      detailLink: 'gift.dc.html?id=' + g.id,
+      waLink: wa + '?text=' + encodeURIComponent(`Hi! I want to gift my ${g.name} 🎁\nSuggested: ${g.products.join(' + ')}\nPlease help me pack a beautiful gift box! 💕`)
+    }));
+    const customGiftWA = wa + '?text=' + encodeURIComponent('Hi! I want to build a Custom Gift Box 🎁\nPlease help me choose products and packaging!');
+
+    return {
+      products, cartItems, dealBoxes, giftLinks, customGiftWA,
+      cartOpen, cartCount: count,
+      cartCountVisible: count > 0,
+      cartTotal: 'Rs. ' + total,
+      cartEmpty: cart.length === 0,
+      mobMenuClass: mobOpen ? 'mob-menu open' : 'mob-menu',
+      openCart: () => this.setState({ cartOpen: true }),
+      closeCart: () => this.setState({ cartOpen: false }),
+      toggleMob: () => this.setState({ mobOpen: !mobOpen }),
+      closeMob: () => this.setState({ mobOpen: false }),
+      onCheckout: () => this.checkout(),
+      onCustomDeal: () => window.open(wa + '?text=' + customMsg, '_blank'),
+      onFormWA: () => window.open(wa, '_blank'),
+      waLink: wa,
+      customWALink: wa + '?text=' + customMsg,
+      toastVisible: addedId !== null,
+      toastMsg: addedName,
+      cartOverlayStyle: {
+        position: 'fixed', inset: 0, zIndex: 200,
+        background: 'rgba(45,27,38,0.5)',
+        opacity: cartOpen ? 1 : 0,
+        pointerEvents: cartOpen ? 'auto' : 'none',
+        transition: 'opacity 0.25s', backdropFilter: 'blur(2px)'
+      },
+      cartPanelStyle: {
+        position: 'fixed', top: 0, right: 0,
+        width: 'min(420px, 100vw)', height: '100dvh',
+        background: '#fef6f9', zIndex: 201,
+        transform: cartOpen ? 'translateX(0)' : 'translateX(100%)',
+        transition: 'transform 0.3s cubic-bezier(.4,0,.2,1)',
+        display: 'flex', flexDirection: 'column',
+        borderLeft: '1.5px solid #f5dce9',
+        boxShadow: cartOpen ? '-8px 0 40px rgba(45,27,38,.15)' : 'none'
+      }
+    };
+  }
+}
+
+</script>
+</body>
+</html>

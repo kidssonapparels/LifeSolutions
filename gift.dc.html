@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Thoughtful beauty gift collections for sisters, mothers, wives, daughters and cousins.">
+<title>Life Solution | Gift Collection</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+
+<helmet>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script src="./image-slot.js"></script>
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:'DM Sans',sans-serif;background:#fef6f9;color:#2d1b26}
+    a{color:inherit;text-decoration:none}
+    img{display:block;max-width:100%}
+    button{font-family:'DM Sans',sans-serif}
+    .serif{font-family:'Playfair Display',serif}
+    @keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+    .afu{animation:fadeUp .55s ease both}
+    .afu2{animation:fadeUp .55s .1s ease both}
+    .container{max-width:1160px;margin:0 auto;padding:0 48px}
+    .gift-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start;padding:48px 0 56px}
+    .tag-pill{display:inline-block;background:#fce8f0;color:#d4527a;font-size:10px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:3px 10px;border-radius:20px}
+    .prod-mini{background:#fff;border:1.5px solid #f5dce9;border-radius:12px;padding:14px 16px;display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;transition:box-shadow .2s}
+    .prod-mini:hover{box-shadow:0 4px 16px rgba(212,82,122,.1)}
+    .reason-item{display:flex;align-items:center;gap:10px;padding:8px 0}
+    .checkout-card{background:#fff;border-radius:20px;border:1.5px solid #f5dce9;padding:28px 32px;box-shadow:0 4px 24px rgba(212,82,122,.07)}
+    .cart-row{display:flex;align-items:center;gap:10px;padding:11px 0;border-bottom:1px solid #fce8f0}
+    .cqb{width:26px;height:26px;background:#fce8f0;color:#2d1b26;border:none;cursor:pointer;font-size:13px;font-weight:700;border-radius:5px;display:flex;align-items:center;justify-content:center;transition:background .2s}
+    .cqb:hover{background:#d4527a;color:#fff}
+    .rem-btn{background:transparent;border:none;cursor:pointer;color:rgba(45,27,38,.3);font-size:16px;line-height:1;padding:0 2px;transition:color .2s}
+    .rem-btn:hover{color:#d4527a}
+    @media(max-width:900px){.gift-grid{grid-template-columns:1fr;gap:32px;padding:32px 0}.container{padding:0 24px}}
+    @media(max-width:480px){.container{padding:0 14px}}
+  </style>
+</helmet>
+
+<!-- NAV -->
+<nav style="position:sticky;top:0;z-index:100;background:#fff;border-bottom:1.5px solid #f5dce9;box-shadow:0 2px 12px rgba(212,82,122,.06);">
+  <div style="max-width:1160px;margin:0 auto;padding:0 48px;height:60px;display:flex;align-items:center;justify-content:space-between;gap:12px;">
+    <a href="Life Solution.dc.html" style="display:flex;align-items:center;gap:7px;color:#d4527a;font-size:13px;font-weight:600;flex-shrink:0;white-space:nowrap;transition:opacity .2s;" style-hover="opacity:.7">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5"/><path d="M12 19l-7-7 7-7"/></svg>
+      Back to Shop
+    </a>
+    <a href="Life Solution.dc.html" style="display:flex;align-items:center;gap:8px;flex-shrink:0;">
+      <div style="width:32px;height:32px;background:linear-gradient(135deg,#d4527a,#a83560);border-radius:50%;display:flex;align-items:center;justify-content:center;">
+        <span style="color:#fff;font-weight:800;font-size:12px;font-family:'Playfair Display',serif;">LS</span>
+      </div>
+      <span style="font-family:'Playfair Display',serif;font-weight:700;font-size:15px;color:#2d1b26;">Life Solution</span>
+    </a>
+    <button onClick="{{ scrollToCheckout }}" style="position:relative;background:#d4527a;color:#fff;border:none;cursor:pointer;padding:9px 18px;border-radius:22px;font-size:12px;font-weight:600;display:flex;align-items:center;gap:6px;box-shadow:0 2px 10px rgba(212,82,122,.25);flex-shrink:0;transition:background .2s;" style-hover="background:#a83560">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+      Cart
+      <sc-if value="{{ cartCountVisible }}" hint-placeholder-val="{{ false }}">
+        <span style="background:#fff;color:#d4527a;font-size:10px;font-weight:800;width:17px;height:17px;border-radius:50%;display:flex;align-items:center;justify-content:center;position:absolute;top:-5px;right:-5px;">{{ cartCount }}</span>
+      </sc-if>
+    </button>
+  </div>
+</nav>
+
+<!-- BREADCRUMB -->
+<div style="background:#fff;border-bottom:1px solid #f5dce9;">
+  <div class="container" style="padding-top:10px;padding-bottom:10px;display:flex;align-items:center;gap:6px;font-size:12px;color:rgba(45,27,38,.45);">
+    <a href="Life Solution.dc.html" style="transition:color .2s;" style-hover="color:#d4527a">Home</a>
+    <span>›</span>
+    <a href="Life Solution.dc.html#gifts" style="transition:color .2s;" style-hover="color:#d4527a">Gift Collection</a>
+    <span>›</span>
+    <span style="color:#d4527a;font-weight:600;">Gift for {{ gift.name }}</span>
+  </div>
+</div>
+
+<!-- GIFT DETAIL -->
+<div class="container">
+  <div class="gift-grid">
+    <!-- Left: Hero Card -->
+    <div class="afu">
+      <div style="border-radius:16px;overflow:hidden;background:#2d1b26;min-height:320px;position:relative;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;text-align:center;">
+        <img src="{{ gift.image }}" alt="{{ gift.name }} gift collection" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;">
+        <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(45,27,38,.05),rgba(45,27,38,.78));"></div>
+        <div style="position:relative;z-index:1;padding:30px 24px;width:100%;">
+        <div style="font-size:52px;line-height:1;margin-bottom:10px;">{{ gift.emoji }}</div>
+        <h2 class="serif" style="color:#fff;font-size:28px;font-weight:800;margin-bottom:6px;">{{ gift.name }}</h2>
+        <p style="color:rgba(255,255,255,.75);font-size:13px;font-style:italic;">{{ gift.tagline }}</p>
+        </div>
+        <div style="position:absolute;top:-30px;right:-30px;width:120px;height:120px;border-radius:50%;background:rgba(255,255,255,.06);"></div>
+        <div style="position:absolute;bottom:-20px;left:-20px;width:80px;height:80px;border-radius:50%;background:rgba(255,255,255,.06);"></div>
+      </div>
+      <div style="background:#fff;border:1.5px solid #f5dce9;border-radius:14px;padding:20px;margin-top:14px;">
+        <div style="font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#d4527a;margin-bottom:10px;">Bundle Price</div>
+        <div style="display:flex;align-items:baseline;gap:10px;margin-bottom:4px;">
+          <span class="serif" style="font-size:32px;font-weight:800;color:#d4527a;">Rs. {{ gift.bundlePrice }}</span>
+          <span style="font-size:13px;color:rgba(45,27,38,.4);text-decoration:line-through;">Rs. {{ gift.originalPrice }}</span>
+        </div>
+        <p style="font-size:12px;color:rgba(45,27,38,.5);">Includes all suggested products + beautiful gift packaging</p>
+      </div>
+    </div>
+
+    <!-- Right: Details -->
+    <div class="afu2">
+      <span class="tag-pill" style="margin-bottom:10px;display:inline-block;">💝 Gift Collection</span>
+      <h1 class="serif" style="font-size:clamp(22px,3.5vw,38px);font-weight:800;color:#2d1b26;line-height:1.15;margin-bottom:12px;">{{ gift.headline }}</h1>
+      <p style="font-size:14px;line-height:1.8;color:rgba(45,27,38,.68);margin-bottom:22px;">{{ gift.desc }}</p>
+
+      <!-- Suggested Products -->
+      <div style="margin-bottom:20px;">
+        <div style="font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#d4527a;margin-bottom:10px;">Suggested Products</div>
+        <sc-for list="{{ gift.products }}" as="gp" hint-placeholder-count="3">
+          <div class="prod-mini">
+            <div style="display:flex;align-items:center;gap:10px;">
+              <div style="width:36px;height:36px;background:#fce8f0;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;">🌸</div>
+              <span style="font-size:13px;font-weight:600;color:#2d1b26;">{{ gp.name }}</span>
+            </div>
+            <span class="serif" style="font-size:14px;font-weight:700;color:#d4527a;flex-shrink:0;">Rs. {{ gp.price }}</span>
+          </div>
+        </sc-for>
+      </div>
+
+      <!-- Why she'll love it -->
+      <div style="margin-bottom:22px;">
+        <div style="font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#d4527a;margin-bottom:10px;">Why She'll Love It</div>
+        <sc-for list="{{ gift.reasons }}" as="reason" hint-placeholder-count="4">
+          <div class="reason-item">
+            <span style="font-size:16px;flex-shrink:0;">✨</span>
+            <span style="font-size:13px;color:rgba(45,27,38,.75);">{{ reason }}</span>
+          </div>
+        </sc-for>
+      </div>
+
+      <!-- CTA -->
+      <div style="display:flex;flex-direction:column;gap:10px;">
+        <button onClick="{{ onAdd }}" style="{{ addBtnStyle }}">
+          {{ btnLabel }}
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+        </button>
+        <a href="{{ customWA }}" target="_blank" style="background:rgba(37,211,102,.1);color:#25d366;font-size:13px;font-weight:600;padding:13px 20px;border-radius:32px;display:flex;align-items:center;justify-content:center;gap:8px;border:1.5px solid rgba(37,211,102,.25);transition:background .2s;" style-hover="background:rgba(37,211,102,.2)">
+          💬 Customize via WhatsApp
+        </a>
+        <div style="display:flex;align-items:center;gap:16px;font-size:12px;color:rgba(45,27,38,.45);flex-wrap:wrap;">
+          <span>🚚 Fast delivery Pakistan</span>
+          <span>🎁 Gift wrap included</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div style="height:1px;background:linear-gradient(90deg,transparent,#f5dce9,transparent);"></div>
+
+<!-- ORDER SUMMARY -->
+<section id="checkout" style="background:linear-gradient(180deg,#fff9fb,#fef6f9);padding:56px 0;">
+  <div class="container">
+    <div style="max-width:580px;margin:0 auto;">
+      <div style="text-align:center;margin-bottom:24px;">
+        <h2 class="serif" style="font-size:clamp(20px,3vw,30px);font-weight:700;color:#2d1b26;margin-bottom:6px;">🛒 Order Summary</h2>
+        <p style="font-size:13px;color:rgba(45,27,38,.48);">Shipping Rs. 200 added — order via WhatsApp</p>
+      </div>
+      <div class="checkout-card">
+        <sc-if value="{{ cartEmpty }}" hint-placeholder-val="{{ true }}">
+          <div style="text-align:center;padding:24px 0;">
+            <div style="font-size:40px;margin-bottom:10px;">🛒</div>
+            <p style="font-size:14px;font-weight:600;color:rgba(45,27,38,.45);">Cart is empty</p>
+            <p style="font-size:12px;color:rgba(45,27,38,.35);margin-top:4px;">Add this gift box above to start your order</p>
+          </div>
+        </sc-if>
+        <sc-for list="{{ cartItems }}" as="ci" hint-placeholder-count="0">
+          <div class="cart-row">
+            <div style="flex:1;min-width:0;">
+              <div style="font-size:13px;font-weight:700;color:#2d1b26;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">{{ ci.name }}</div>
+              <div style="font-size:11px;color:rgba(45,27,38,.45);">Rs. {{ ci.price }} × {{ ci.qty }}</div>
+            </div>
+            <div style="display:flex;align-items:center;gap:4px;flex-shrink:0;">
+              <button class="cqb" onClick="{{ ci.onDec }}">−</button>
+              <span style="font-size:12px;font-weight:700;min-width:20px;text-align:center;">{{ ci.qty }}</span>
+              <button class="cqb" onClick="{{ ci.onInc }}">+</button>
+            </div>
+            <span style="font-size:13px;font-weight:700;color:#d4527a;min-width:64px;text-align:right;flex-shrink:0;">{{ ci.subtotal }}</span>
+            <button class="rem-btn" onClick="{{ ci.onRemove }}">×</button>
+          </div>
+        </sc-for>
+        <sc-if value="{{ hasCart }}" hint-placeholder-val="{{ false }}">
+          <div style="padding-top:14px;display:flex;flex-direction:column;gap:9px;">
+            <div style="display:flex;justify-content:space-between;font-size:13px;color:rgba(45,27,38,.6);"><span>Subtotal</span><span style="font-weight:600;">{{ subtotalLabel }}</span></div>
+            <div style="display:flex;justify-content:space-between;font-size:13px;color:rgba(45,27,38,.6);"><span>🚚 Shipping</span><span style="font-weight:600;">{{ shippingLabel }}</span></div>
+            <div style="height:1.5px;background:linear-gradient(90deg,#f5dce9,#d4527a,#f5dce9);margin:4px 0;border-radius:2px;"></div>
+            <div style="display:flex;justify-content:space-between;align-items:center;">
+              <span class="serif" style="font-size:15px;font-weight:700;color:#2d1b26;">Total Amount</span>
+              <span class="serif" style="font-size:26px;font-weight:800;color:#d4527a;">{{ totalLabel }}</span>
+            </div>
+            <button onClick="{{ onCheckout }}" style="background:linear-gradient(135deg,#d4527a,#a83560);color:#fff;font-size:13px;font-weight:600;padding:15px 20px;border:none;cursor:pointer;border-radius:32px;display:flex;align-items:center;justify-content:center;gap:8px;box-shadow:0 4px 16px rgba(212,82,122,.3);transition:opacity .2s;margin-top:4px;width:100%;" style-hover="opacity:.88">
+              💬 Order via WhatsApp
+            </button>
+            <p style="font-size:11px;color:rgba(45,27,38,.32);text-align:center;margin-top:2px;">Your order details sent to WhatsApp automatically</p>
+          </div>
+        </sc-if>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer style="background:#2d1b26;padding:18px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;">
+  <a href="Life Solution.dc.html" style="color:rgba(255,255,255,.45);font-size:12px;display:flex;align-items:center;gap:6px;transition:color .2s;" style-hover="color:#d4527a">
+    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5"/><path d="M12 19l-7-7 7-7"/></svg>
+    Back to Life Solution
+  </a>
+  <span style="color:rgba(255,255,255,.22);font-size:11px;">© 2026 Life Solution 💕</span>
+  <a href="https://wa.me/923224707988" target="_blank" style="color:#25d366;font-size:12px;font-weight:600;">💬 WhatsApp</a>
+</footer>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+
+class Component extends DCLogic {
+  state = {
+    gid: (() => { try { return new URLSearchParams(window.location.search).get('id') || 'sister' } catch(e) { return 'sister' } })(),
+    cart: (() => { try { return JSON.parse(localStorage.getItem('ls_cart') || '[]') } catch(e) { return [] } })(),
+    flash: false
+  };
+
+  _wa() { return 'https://wa.me/923224707988' }
+  _save(c) { try { localStorage.setItem('ls_cart', JSON.stringify(c)) } catch(e) {} }
+
+  _gifts() {
+    return {
+      sister: { id:'sister', image:'assets/giftbox.webp', name:'Sister', emoji:'👯‍♀️', tagline:'Trendy & fun beauty gifts',
+        headline:'Gift Your Sister Something She\'ll Love', bundlePrice:449, originalPrice:490,
+        desc:'Sisters love trendy beauty items! This curated collection of mehendi stencils, gajras and glitter is perfect for her next outing, Eid celebration, or any special occasion.',
+        products:[{id:'stencils',name:'Mehendi Stencils',price:120},{id:'gajras',name:'Gajras',price:220},{id:'glitter',name:'Mehendi Glitter',price:150}],
+        reasons:['She loves trendy beauty items','Perfect for Eid & hangouts','Everything she needs in one box','Beautiful gift packaging included'] },
+      mother: { id:'mother', image:'assets/cone-box.webp', name:'Mother', emoji:'💐', tagline:'Elegant & traditional beauty',
+        headline:'A Beautiful Gift for Your Amazing Mother', bundlePrice:280, originalPrice:300,
+        desc:'Mothers appreciate elegant, traditional beauty. A classic mehendi kit is the perfect thoughtful gift she will truly use and treasure every day.',
+        products:[{id:'cone',name:'Mehendi Cone',price:180},{id:'stencils',name:'Mehendi Stencils',price:120}],
+        reasons:['Traditional & elegant choice','She uses mehendi daily','Thoughtful & very practical','She will use it every day'] },
+      wife: { id:'wife', image:'assets/nails.webp', name:'Wife', emoji:'💍', tagline:'Premium bridal & luxury gifts',
+        headline:'Surprise Your Wife with Luxury Beauty', bundlePrice:599, originalPrice:650,
+        desc:'Show her how much you love her with a premium beauty collection. Gorgeous artificial nails, elegant gajras, and festive glitter — she deserves the very best!',
+        products:[{id:'nails',name:'Artificial Nails',price:280},{id:'gajras',name:'Gajras',price:220},{id:'glitter',name:'Mehendi Glitter',price:150}],
+        reasons:['Premium bridal quality','She will feel so special','Luxurious gift packaging','Perfect romantic surprise'] },
+      daughter: { id:'daughter', image:'assets/eyebrow.webp', name:'Daughter', emoji:'🌸', tagline:'Fun & modern beauty picks',
+        headline:'A Fun, Trendy Gift for Your Daughter', bundlePrice:349, originalPrice:379,
+        desc:'Daughters love modern beauty! Trendy eyebrow arches and beautiful press-on nails make the perfect gift for young girls and teenagers.',
+        products:[{id:'arch',name:'Eyebrow Arch',price:99},{id:'nails',name:'Artificial Nails',price:280}],
+        reasons:['Trendy & age-appropriate','Suitable for everyday beauty routines','She will be SO excited!','Fun to use with friends'] },
+      kazan: { id:'kazan', image:'assets/stencils.webp', name:'Cousin', emoji:'🤝', tagline:'Perfect cousin (kazan) gift',
+        headline:'A Thoughtful Gift for Your Cousin', bundlePrice:369, originalPrice:399,
+        desc:'Show your cousin (kazan) you care with a complete mehendi kit. Perfect for Eid visits, family gatherings, and festive celebrations.',
+        products:[{id:'stencils',name:'Mehendi Stencils',price:120},{id:'cone',name:'Mehendi Cone',price:180},{id:'arch',name:'Eyebrow Arch',price:99}],
+        reasons:['Complete mehendi beauty set','Great for family events','Thoughtful & practical gift','A gift she will always remember'] }
+    };
+  }
+
+  add() {
+    const { gid, cart } = this.state;
+    const gift = this._gifts()[gid];
+    if (!gift) return;
+    const itemId = 'gift-' + gid;
+    let c = cart;
+    const idx = c.findIndex(i => i.id === itemId);
+    if (idx >= 0) c = c.map(i => i.id === itemId ? {...i, qty: i.qty + 1} : i);
+    else c = [...c, {id: itemId, name: 'Gift Box — ' + gift.name, price: gift.bundlePrice, qty: 1}];
+    this._save(c);
+    this.setState({ cart: c, flash: true });
+    setTimeout(() => this.setState({ flash: false }), 2000);
+  }
+
+  remove(id) { const c = this.state.cart.filter(i => i.id !== id); this._save(c); this.setState({ cart: c }); }
+  changeQty(id, d) { const c = this.state.cart.map(i => i.id === id ? {...i, qty: i.qty + d} : i).filter(i => i.qty > 0); this._save(c); this.setState({ cart: c }); }
+
+  checkout() {
+    const { cart } = this.state;
+    if (!cart.length) return;
+    const sub = cart.reduce((s, i) => s + i.price * i.qty, 0);
+    const total = sub + 200;
+    const lines = cart.map(i => `${i.qty}x ${i.name} - Rs.${i.price * i.qty}`).join('%0A');
+    window.open(this._wa() + `?text=%F0%9F%8E%81%20Life%20Solution%20Gift%20Order%3A%0A%0A${lines}%0A%0AShipping%3A%20Rs.200%0A%E2%80%95%E2%80%95%E2%80%95%E2%80%95%0ATotal%3A%20Rs.${total}%0A%0APlease%20confirm%20%26%20share%20delivery%20address!`, '_blank');
+  }
+
+  renderVals() {
+    const { gid, flash, cart } = this.state;
+    const gift = this._gifts()[gid] || this._gifts().sister;
+    const sub = cart.reduce((s, i) => s + i.price * i.qty, 0);
+    const count = cart.reduce((s, i) => s + i.qty, 0);
+    const customMsg = encodeURIComponent(`Hi! I want to customize a Gift Box for my ${gift.name} 🎁\nPlease help me choose products and packaging! 💕`);
+    return {
+      gift,
+      onAdd: () => this.add(),
+      btnLabel: flash ? '✓ Gift Box Added!' : `Add Gift Box to Cart`,
+      addBtnStyle: {
+        background: flash ? 'linear-gradient(135deg,#25a244,#1e8236)' : 'linear-gradient(135deg,#d4527a,#a83560)',
+        color:'#fff', fontSize:'13px', fontWeight:'600', padding:'14px 22px',
+        border:'none', cursor:'pointer', borderRadius:'32px', display:'flex',
+        alignItems:'center', gap:'8px', boxShadow:'0 4px 16px rgba(212,82,122,.3)',
+        transition:'opacity .2s', fontFamily:"'DM Sans',sans-serif", width:'100%',
+        justifyContent:'center'
+      },
+      customWA: this._wa() + '?text=' + customMsg,
+      cartItems: cart.map(i => ({
+        ...i, subtotal: 'Rs. ' + (i.price * i.qty),
+        onInc: () => this.changeQty(i.id, 1),
+        onDec: () => this.changeQty(i.id, -1),
+        onRemove: () => this.remove(i.id)
+      })),
+      cartEmpty: cart.length === 0, hasCart: cart.length > 0,
+      cartCount: count, cartCountVisible: count > 0,
+      subtotalLabel: 'Rs. ' + sub,
+      shippingLabel: 'Rs. 200',
+      totalLabel: 'Rs. ' + (sub + 200),
+      onCheckout: () => this.checkout(),
+      scrollToCheckout: () => { const el = document.getElementById('checkout'); if(el) el.scrollIntoView({behavior:'smooth'}) }
+    };
+  }
+}
+
+</script>
+</body>
+</html>

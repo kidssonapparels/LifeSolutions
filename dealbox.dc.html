@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Pre-curated beauty bundles and festive deal boxes with WhatsApp ordering.">
+<title>Life Solution | Festival Deal Boxes</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+
+<helmet>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script src="./image-slot.js"></script>
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:'DM Sans',sans-serif;background:#fef6f9;color:#2d1b26}
+    a{color:inherit;text-decoration:none}
+    img{display:block;max-width:100%}
+    button{font-family:'DM Sans',sans-serif}
+    .serif{font-family:'Playfair Display',serif}
+    @keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+    .afu{animation:fadeUp .55s ease both}
+    .afu2{animation:fadeUp .55s .1s ease both}
+    .container{max-width:1160px;margin:0 auto;padding:0 48px}
+    .deal-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start;padding:48px 0 56px}
+    .tag-pill{display:inline-block;background:#fce8f0;color:#d4527a;font-size:10px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:3px 10px;border-radius:20px}
+    .inc-row{display:flex;align-items:center;justify-content:space-between;padding:10px 14px;background:#fef6f9;border-radius:8px;margin-bottom:6px;}
+    .perk-item{display:flex;align-items:center;gap:8px;padding:6px 0;}
+    .checkout-card{background:#fff;border-radius:20px;border:1.5px solid #f5dce9;padding:28px 32px;box-shadow:0 4px 24px rgba(212,82,122,.07)}
+    .cart-row{display:flex;align-items:center;gap:10px;padding:11px 0;border-bottom:1px solid #fce8f0}
+    .cqb{width:26px;height:26px;background:#fce8f0;color:#2d1b26;border:none;cursor:pointer;font-size:13px;font-weight:700;border-radius:5px;display:flex;align-items:center;justify-content:center;transition:background .2s}
+    .cqb:hover{background:#d4527a;color:#fff}
+    .rem-btn{background:transparent;border:none;cursor:pointer;color:rgba(45,27,38,.3);font-size:16px;line-height:1;padding:0 2px;transition:color .2s}
+    .rem-btn:hover{color:#d4527a}
+    @media(max-width:900px){.deal-grid{grid-template-columns:1fr;gap:32px;padding:32px 0}.container{padding:0 24px}}
+    @media(max-width:480px){.container{padding:0 14px}}
+  </style>
+</helmet>
+
+<!-- NAV -->
+<nav style="position:sticky;top:0;z-index:100;background:#fff;border-bottom:1.5px solid #f5dce9;box-shadow:0 2px 12px rgba(212,82,122,.06);">
+  <div style="max-width:1160px;margin:0 auto;padding:0 48px;height:60px;display:flex;align-items:center;justify-content:space-between;gap:12px;">
+    <a href="Life Solution.dc.html" style="display:flex;align-items:center;gap:7px;color:#d4527a;font-size:13px;font-weight:600;flex-shrink:0;white-space:nowrap;transition:opacity .2s;" style-hover="opacity:.7">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5"/><path d="M12 19l-7-7 7-7"/></svg>
+      Back to Shop
+    </a>
+    <a href="Life Solution.dc.html" style="display:flex;align-items:center;gap:8px;flex-shrink:0;">
+      <div style="width:32px;height:32px;background:linear-gradient(135deg,#d4527a,#a83560);border-radius:50%;display:flex;align-items:center;justify-content:center;">
+        <span style="color:#fff;font-weight:800;font-size:12px;font-family:'Playfair Display',serif;">LS</span>
+      </div>
+      <span style="font-family:'Playfair Display',serif;font-weight:700;font-size:15px;color:#2d1b26;">Life Solution</span>
+    </a>
+    <button onClick="{{ scrollToCheckout }}" style="position:relative;background:#d4527a;color:#fff;border:none;cursor:pointer;padding:9px 18px;border-radius:22px;font-size:12px;font-weight:600;display:flex;align-items:center;gap:6px;box-shadow:0 2px 10px rgba(212,82,122,.25);flex-shrink:0;transition:background .2s;" style-hover="background:#a83560">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+      Cart
+      <sc-if value="{{ cartCountVisible }}" hint-placeholder-val="{{ false }}">
+        <span style="background:#fff;color:#d4527a;font-size:10px;font-weight:800;width:17px;height:17px;border-radius:50%;display:flex;align-items:center;justify-content:center;position:absolute;top:-5px;right:-5px;">{{ cartCount }}</span>
+      </sc-if>
+    </button>
+  </div>
+</nav>
+
+<!-- BREADCRUMB -->
+<div style="background:#fff;border-bottom:1px solid #f5dce9;">
+  <div class="container" style="padding-top:10px;padding-bottom:10px;display:flex;align-items:center;gap:6px;font-size:12px;color:rgba(45,27,38,.45);">
+    <a href="Life Solution.dc.html" style="transition:color .2s;" style-hover="color:#d4527a">Home</a>
+    <span>›</span>
+    <a href="Life Solution.dc.html#deals" style="transition:color .2s;" style-hover="color:#d4527a">Deal Boxes</a>
+    <span>›</span>
+    <span style="color:#d4527a;font-weight:600;">{{ deal.name }}</span>
+  </div>
+</div>
+
+<!-- DEAL DETAIL -->
+<div class="container">
+  <div class="deal-grid">
+    <!-- Left: Image + Savings Badge -->
+    <div class="afu">
+      <div style="border-radius:16px;overflow:hidden;background:linear-gradient(135deg,#2d1b26,#4f2038);aspect-ratio:4/3;position:relative;display:flex;align-items:center;justify-content:center;">
+        <img src="{{ deal.image }}" alt="{{ deal.name }}" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;" loading="eager"><div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(45,27,38,.05),rgba(45,27,38,.55));"></div>
+        <div style="position:relative;z-index:1;text-align:center;pointer-events:none;">
+          <div style="font-size:56px;margin-bottom:8px;">🎁</div>
+          <div class="serif" style="color:#fff;font-size:22px;font-weight:700;">{{ deal.name }}</div>
+          <div style="color:rgba(255,255,255,.6);font-size:13px;margin-top:4px;">{{ deal.subtitle }}</div>
+        </div>
+        <span style="position:absolute;top:14px;right:14px;background:#d4a84b;color:#2d1b26;font-size:11px;font-weight:800;padding:5px 12px;border-radius:20px;letter-spacing:.04em;">{{ deal.tag }}</span>
+      </div>
+      <!-- Savings Card -->
+      <div style="background:linear-gradient(135deg,#d4527a,#a83560);border-radius:12px;padding:16px 20px;margin-top:14px;display:flex;align-items:center;justify-content:space-between;">
+        <div>
+          <div style="color:rgba(255,255,255,.7);font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.08em;">You Save</div>
+          <div class="serif" style="color:#fff;font-size:28px;font-weight:800;">Rs. {{ deal.savings }}</div>
+        </div>
+        <div style="text-align:right;">
+          <div style="color:rgba(255,255,255,.6);font-size:12px;text-decoration:line-through;">Rs. {{ deal.originalPrice }}</div>
+          <div class="serif" style="color:#fff;font-size:22px;font-weight:700;">Rs. {{ deal.price }}</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right: Details -->
+    <div class="afu2">
+      <span class="tag-pill" style="margin-bottom:10px;display:inline-block;">Festival Deal</span>
+      <h1 class="serif" style="font-size:clamp(26px,4vw,42px);font-weight:800;color:#2d1b26;line-height:1.1;margin-bottom:6px;">{{ deal.name }}</h1>
+      <div style="font-size:14px;color:#d4527a;font-weight:600;margin-bottom:14px;">{{ deal.subtitle }}</div>
+      <p style="font-size:14px;line-height:1.8;color:rgba(45,27,38,.68);margin-bottom:22px;">{{ deal.desc }}</p>
+
+      <!-- What's Included -->
+      <div style="margin-bottom:20px;">
+        <div style="font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#d4527a;margin-bottom:10px;">What's Included</div>
+        <sc-for list="{{ deal.includes }}" as="inc" hint-placeholder-count="4">
+          <div class="inc-row">
+            <div style="display:flex;align-items:center;gap:8px;">
+              <span style="background:#d4527a;color:#fff;font-size:10px;font-weight:700;width:20px;height:20px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;">{{ inc.qty }}</span>
+              <span style="font-size:13px;font-weight:600;color:#2d1b26;">{{ inc.name }}</span>
+            </div>
+            <span style="font-size:12px;color:rgba(45,27,38,.5);">Rs. {{ inc.price }}</span>
+          </div>
+        </sc-for>
+      </div>
+
+      <!-- Perks -->
+      <div style="margin-bottom:22px;">
+        <div style="font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#d4527a;margin-bottom:10px;">Why Choose This Deal</div>
+        <sc-for list="{{ deal.perks }}" as="perk" hint-placeholder-count="4">
+          <div class="perk-item">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#fce8f0"/><path d="M8 12l3 3 5-5" stroke="#d4527a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span style="font-size:13px;color:rgba(45,27,38,.75);">{{ perk }}</span>
+          </div>
+        </sc-for>
+      </div>
+
+      <!-- Price + CTA -->
+      <div style="background:#fef6f9;border:1.5px solid #f5dce9;border-radius:14px;padding:20px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:14px;margin-bottom:12px;">
+        <div>
+          <div style="font-size:11px;color:rgba(45,27,38,.45);margin-bottom:3px;">Deal Price</div>
+          <div class="serif" style="font-size:32px;font-weight:800;color:#d4527a;line-height:1;">Rs. {{ deal.price }}</div>
+          <div style="font-size:12px;color:rgba(45,27,38,.4);text-decoration:line-through;margin-top:2px;">Was Rs. {{ deal.originalPrice }}</div>
+        </div>
+        <button onClick="{{ onAdd }}" style="{{ addBtnStyle }}">
+          {{ btnLabel }}
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+        </button>
+      </div>
+      <div style="display:flex;align-items:center;gap:16px;font-size:12px;color:rgba(45,27,38,.45);flex-wrap:wrap;">
+        <span>🚚 Fast delivery across Pakistan</span>
+        <span>🎁 Beautiful packaging included</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div style="height:1px;background:linear-gradient(90deg,transparent,#f5dce9,transparent);"></div>
+
+<!-- ORDER SUMMARY -->
+<section id="checkout" style="background:linear-gradient(180deg,#fff9fb,#fef6f9);padding:56px 0;">
+  <div class="container">
+    <div style="max-width:580px;margin:0 auto;">
+      <div style="text-align:center;margin-bottom:24px;">
+        <h2 class="serif" style="font-size:clamp(20px,3vw,30px);font-weight:700;color:#2d1b26;margin-bottom:6px;">🛒 Order Summary</h2>
+        <p style="font-size:13px;color:rgba(45,27,38,.48);">Shipping Rs. 200 added — order via WhatsApp</p>
+      </div>
+      <div class="checkout-card">
+        <sc-if value="{{ cartEmpty }}" hint-placeholder-val="{{ true }}">
+          <div style="text-align:center;padding:24px 0;">
+            <div style="font-size:40px;margin-bottom:10px;">🛒</div>
+            <p style="font-size:14px;font-weight:600;color:rgba(45,27,38,.45);">Cart is empty</p>
+            <p style="font-size:12px;color:rgba(45,27,38,.35);margin-top:4px;">Add this deal box above to start your order</p>
+          </div>
+        </sc-if>
+        <sc-for list="{{ cartItems }}" as="ci" hint-placeholder-count="0">
+          <div class="cart-row">
+            <div style="flex:1;min-width:0;">
+              <div style="font-size:13px;font-weight:700;color:#2d1b26;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">{{ ci.name }}</div>
+              <div style="font-size:11px;color:rgba(45,27,38,.45);">Rs. {{ ci.price }} × {{ ci.qty }}</div>
+            </div>
+            <div style="display:flex;align-items:center;gap:4px;flex-shrink:0;">
+              <button class="cqb" onClick="{{ ci.onDec }}">−</button>
+              <span style="font-size:12px;font-weight:700;min-width:20px;text-align:center;">{{ ci.qty }}</span>
+              <button class="cqb" onClick="{{ ci.onInc }}">+</button>
+            </div>
+            <span style="font-size:13px;font-weight:700;color:#d4527a;min-width:64px;text-align:right;flex-shrink:0;">{{ ci.subtotal }}</span>
+            <button class="rem-btn" onClick="{{ ci.onRemove }}">×</button>
+          </div>
+        </sc-for>
+        <sc-if value="{{ hasCart }}" hint-placeholder-val="{{ false }}">
+          <div style="padding-top:14px;display:flex;flex-direction:column;gap:9px;">
+            <div style="display:flex;justify-content:space-between;font-size:13px;color:rgba(45,27,38,.6);"><span>Subtotal</span><span style="font-weight:600;">{{ subtotalLabel }}</span></div>
+            <div style="display:flex;justify-content:space-between;font-size:13px;color:rgba(45,27,38,.6);"><span>🚚 Shipping</span><span style="font-weight:600;">{{ shippingLabel }}</span></div>
+            <div style="height:1.5px;background:linear-gradient(90deg,#f5dce9,#d4527a,#f5dce9);margin:4px 0;border-radius:2px;"></div>
+            <div style="display:flex;justify-content:space-between;align-items:center;">
+              <span class="serif" style="font-size:15px;font-weight:700;color:#2d1b26;">Total Amount</span>
+              <span class="serif" style="font-size:26px;font-weight:800;color:#d4527a;">{{ totalLabel }}</span>
+            </div>
+            <button onClick="{{ onCheckout }}" style="background:linear-gradient(135deg,#d4527a,#a83560);color:#fff;font-size:13px;font-weight:600;padding:15px 20px;border:none;cursor:pointer;border-radius:32px;display:flex;align-items:center;justify-content:center;gap:8px;box-shadow:0 4px 16px rgba(212,82,122,.3);transition:opacity .2s;margin-top:4px;width:100%;" style-hover="opacity:.88">
+              💬 Order via WhatsApp
+            </button>
+            <p style="font-size:11px;color:rgba(45,27,38,.32);text-align:center;margin-top:2px;">Your order details sent to WhatsApp automatically</p>
+          </div>
+        </sc-if>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer style="background:#2d1b26;padding:18px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;">
+  <a href="Life Solution.dc.html" style="color:rgba(255,255,255,.45);font-size:12px;display:flex;align-items:center;gap:6px;transition:color .2s;" style-hover="color:#d4527a">
+    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5"/><path d="M12 19l-7-7 7-7"/></svg>
+    Back to Life Solution
+  </a>
+  <span style="color:rgba(255,255,255,.22);font-size:11px;">© 2026 Life Solution 💕</span>
+  <a href="https://wa.me/923224707988" target="_blank" style="color:#25d366;font-size:12px;font-weight:600;">💬 WhatsApp</a>
+</footer>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+
+class Component extends DCLogic {
+  state = {
+    did: (() => { try { return new URLSearchParams(window.location.search).get('id') || 'deal1' } catch(e) { return 'deal1' } })(),
+    cart: (() => { try { return JSON.parse(localStorage.getItem('ls_cart') || '[]') } catch(e) { return [] } })(),
+    flash: false
+  };
+
+  _wa() { return 'https://wa.me/923224707988' }
+  _save(c) { try { localStorage.setItem('ls_cart', JSON.stringify(c)) } catch(e) {} }
+
+  _deals() {
+    return {
+      deal1: { id:'deal1', image:'assets/cone-studio.webp', name:'Deal Box 1', subtitle:'Starter Kit', tag:'Save Rs.50', price:249, originalPrice:299, savings:50,
+        desc:'Perfect starter kit for mehendi beginners. Everything you need to create beautiful mehendi designs at home — at a special bundled price.',
+        includes:[{name:'Mehendi Stencils',qty:1,price:120},{name:'Mehendi Cone',qty:1,price:180}],
+        perks:['Perfect for beginners & Eid prep','Beautiful gift packaging included','Great value — save Rs.50','Free gift wrap on request'] },
+      deal2: { id:'deal2', image:'assets/cone-box.webp', name:'Deal Box 2', subtitle:'Classic Bundle', tag:'Save Rs.120', price:499, originalPrice:619, savings:120,
+        desc:'Our most popular bundle — a complete festive beauty kit. From mehendi to eyebrow shaping and elegant gajras, everything a Pakistani girl needs for any occasion.',
+        includes:[{name:'Mehendi Cone',qty:2,price:360},{name:'Mehendi Stencils',qty:1,price:120},{name:'Eyebrow Arch',qty:1,price:99},{name:'Gajras',qty:1,price:220}],
+        perks:['Best seller — most popular bundle','Suits all ages & occasions','Premium box packaging','Perfect Eid & wedding gift'] },
+      deal3: { id:'deal3', image:'assets/giftbox.webp', name:'Deal Box 3', subtitle:'Premium Collection', tag:'Best Value', price:849, originalPrice:1049, savings:200,
+        desc:'The ultimate festival beauty collection! All 6 of our premium products in one gorgeous gift box. The perfect luxury gift for any special woman in your life.',
+        includes:[{name:'Mehendi Stencils',qty:1,price:120},{name:'Mehendi Cone',qty:1,price:180},{name:'Eyebrow Arch',qty:1,price:99},{name:'Gajras',qty:1,price:220},{name:'Artificial Nails',qty:1,price:280},{name:'Mehendi Glitter',qty:1,price:150}],
+        perks:['All 6 premium products included','Luxury gift packaging & gift wrap','Best value — save Rs.200','Perfect for weddings & bridal prep'] }
+    };
+  }
+
+  add() {
+    const { did, cart } = this.state;
+    const deal = this._deals()[did];
+    if (!deal) return;
+    let c = cart;
+    const idx = c.findIndex(i => i.id === did);
+    if (idx >= 0) c = c.map(i => i.id === did ? {...i, qty: i.qty + 1} : i);
+    else c = [...c, {id: did, name: deal.name + ' — ' + deal.subtitle, price: deal.price, qty: 1}];
+    this._save(c);
+    this.setState({ cart: c, flash: true });
+    setTimeout(() => this.setState({ flash: false }), 2000);
+  }
+
+  remove(id) { const c = this.state.cart.filter(i => i.id !== id); this._save(c); this.setState({ cart: c }); }
+  changeQty(id, d) { const c = this.state.cart.map(i => i.id === id ? {...i, qty: i.qty + d} : i).filter(i => i.qty > 0); this._save(c); this.setState({ cart: c }); }
+
+  checkout() {
+    const { cart } = this.state;
+    if (!cart.length) return;
+    const sub = cart.reduce((s, i) => s + i.price * i.qty, 0);
+    const total = sub + 200;
+    const lines = cart.map(i => `${i.qty}x ${i.name} - Rs.${i.price * i.qty}`).join('%0A');
+    window.open(this._wa() + `?text=%F0%9F%9B%8D%EF%B8%8F%20Life%20Solution%20Order%3A%0A%0A${lines}%0A%0AShipping%3A%20Rs.200%0A%E2%80%95%E2%80%95%E2%80%95%E2%80%95%0ATotal%3A%20Rs.${total}%0A%0APlease%20confirm%20%26%20share%20delivery%20address!`, '_blank');
+  }
+
+  renderVals() {
+    const { did, flash, cart } = this.state;
+    const deal = this._deals()[did] || this._deals().deal1;
+    const sub = cart.reduce((s, i) => s + i.price * i.qty, 0);
+    const count = cart.reduce((s, i) => s + i.qty, 0);
+    return {
+      deal,
+      onAdd: () => this.add(),
+      btnLabel: flash ? '✓ Added to Cart!' : 'Add Deal Box to Cart',
+      addBtnStyle: {
+        background: flash ? 'linear-gradient(135deg,#25a244,#1e8236)' : 'linear-gradient(135deg,#d4527a,#a83560)',
+        color:'#fff', fontSize:'13px', fontWeight:'600', padding:'13px 22px',
+        border:'none', cursor:'pointer', borderRadius:'32px', display:'flex',
+        alignItems:'center', gap:'8px', boxShadow:'0 4px 16px rgba(212,82,122,.3)',
+        transition:'opacity .2s', whiteSpace:'nowrap', fontFamily:"'DM Sans',sans-serif"
+      },
+      cartItems: cart.map(i => ({
+        ...i, subtotal: 'Rs. ' + (i.price * i.qty),
+        onInc: () => this.changeQty(i.id, 1),
+        onDec: () => this.changeQty(i.id, -1),
+        onRemove: () => this.remove(i.id)
+      })),
+      cartEmpty: cart.length === 0, hasCart: cart.length > 0,
+      cartCount: count, cartCountVisible: count > 0,
+      subtotalLabel: 'Rs. ' + sub,
+      shippingLabel: 'Rs. 200',
+      totalLabel: 'Rs. ' + (sub + 200),
+      onCheckout: () => this.checkout(),
+      scrollToCheckout: () => { const el = document.getElementById('checkout'); if(el) el.scrollIntoView({behavior:'smooth'}) }
+    };
+  }
+}
+
+</script>
+</body>
+</html>
